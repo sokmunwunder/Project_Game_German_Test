@@ -1,0 +1,20 @@
+body {
+    background-color: #EED4C8;
+    margin: 50;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+  }
+  
+  canvas {
+    border: 2px solid white;
+  }
+  
+  button {
+    border: 0;
+    font: inherit;
+    padding: 1em;
+    border: 2px solid white;
+  }
