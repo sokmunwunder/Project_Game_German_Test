@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>German Test Game</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <section id="screen-start">
+      <button id="trigger-play">Start test</button>
+    </section>
+    <section id="screen-game-success" style="display:none">
+      <h1>Congratulations, you have passed the German test and you can go on your well-deserved summer break</h1>
+    </section>
+    <section id="screen-game-over" style="display: none">
+      <h1>Sorry, you have failed the German test, and you must use the summer break to take more German classes!</h1>
+      <button id="trigger-play-again">Take test again</button>
+    </section>
+    <section id="screen-play" style="display: none">
+      <canvas width="600" height="400"></canvas>
+    </section>
+    <script src="js/script.js"></script>
+  </body>
+</html>
