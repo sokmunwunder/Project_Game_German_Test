@@ -17,10 +17,10 @@ triggerPlayElement.addEventListener('click', ()=>{
     game.loop();
 });
 
-triggerPlayAgainElement.addEventListener('click', () =>{
+triggerPlayAgainElement.addEventListener('click', () => {
     screenGameOverElement.style.display = "none";
     screenPlayElement.style.display = "initial";
 
     game.reset();
     game.loop();
-}
+});

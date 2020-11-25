@@ -1,4 +1,4 @@
-class Study {
+class Bonus {
     constructor(game, x, y, width, height, speed){
         this.game = game;
         this.x = x;
@@ -22,9 +22,9 @@ class Study {
         }
         this.game.context.save();
         this.game.context.drawImage(
-            context.fillStyle ="black";
+            context.fillStyle ="green";
             // contex.fillRect(this.x, this.y, 100, 50);
-            context.strokeText =(Lernen, this.x, this.y, 100);
+            context.fillText =(Strandurlaub, this.x, this.y, 150);
         )
         this.game.context.restore();
     }
