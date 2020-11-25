@@ -1,4 +1,4 @@
-const canvas = document.getElementById('play-canvas');
+const canvas = document.getElementById('play');
 const context = canvas.getContext('2d');
 
 
@@ -13,12 +13,17 @@ class Game {
      console.log("test");
     };
     drawImage(){
-
+    console.log('draw');
+    //setTimeout(() =>{
+        //console.log('every 1 sec');
+   // },1000);
     };
 }
 
 const game = new Game(canvas);
 game.runLogic();
+game.drawImage();
+//game.setTimeout();
 
 
 //const canvasElement = document.querySelector('canvas');
