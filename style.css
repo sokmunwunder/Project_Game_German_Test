@@ -9,17 +9,17 @@ body{
 }
 
 canvas{
-  border: 2px solid black;
+  border: 10px solid, black;
 }
 
 #trigger-take-test{
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: Source Sans Pro;
-  padding: 200px;
+  font-family: Architects Daughter;
+  padding: 150px;
   margin: 50px;
-  font-size: 2rem;
+  font-size: 3rem;
   /*border: 2px solid black;*/
   background-color: green;
 

@@ -3,27 +3,13 @@ const context = canvas.getContext('2d');
 
 
 
-class Game {
-    constructor(game, x, y){
-        game = this;
-        this.x = x;
-        this.y = y; 
-    }
-    runLogic(){
-     console.log("test");
-    };
-    drawImage(){
-    console.log('draw');
-    //setTimeout(() =>{
-        //console.log('every 1 sec');
-   // },1000);
-    };
-}
+
 
 const game = new Game(canvas);
 game.runLogic();
 game.drawImage();
 //game.setTimeout();
+
 
 
 //const canvasElement = document.querySelector('canvas');
