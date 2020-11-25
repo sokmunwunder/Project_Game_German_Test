@@ -4,25 +4,29 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>German Test Game</title>
+   <link rel="preconnect" href="https://fonts.gstatic.com">
+   <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Source+Sans+Pro:ital,wght@0,300;0,400;1,400&display=swap" rel="stylesheet">">
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <section id="screen-start">
-      <button id="trigger-play">Start test</button>
+    <section id="test-start">
+      <button id="trigger-take-test">Start test</button>
     </section>
     <section id="screen-passed-test" style="display:none">
       <h1>Congratulations, you have passed the German test and you can go on your well-deserved summer break</h1>
     </section>
     <section id="screen-failed-test" style="display:none">
       <h1>Sorry, you have failed the German test, and you must use the summer break to take more German classes!</h1>
-      <button id="trigger-play-again">Take test again</button>
+      <button id="trigger-test-test-again">Take test again</button>
     </section>
-    <section id="screen-play" style="display: none">
-      <canvas width="900" height="600"></canvas>
+    <section id="test-ongoing" style="display: none">
+      <canvas id="play-canvas" width="600" height="400"></canvas>
     </section>
-    <script src="js/holiday.js"></script>
-    <script src="js/study.js"></script>
+    <script>
+    <script src="js/words.js"></script>  
+    <script src="js/player.js"></script>
     <script src="js/game.js"></script>
     <script src="js/script.js"></script>
+    </script>
   </body>
 </html>

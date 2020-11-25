@@ -1,22 +1,26 @@
-body {
-    background-color: #EED4C8;
-    margin: 50;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: sans-serif;
-  }
-  
-  canvas {
-    border: 2px solid white;
-  }
-  
-  button {
-    border: 0;
-    font: inherit;
-    font-weight: bold;
-    padding: 1em;
-    border: 2px solid #D67CE8;
-    background-color: #D67CE8;
-  }
+body{
+  background-color: white;
+  margin: 100px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: monospace;
+}
+
+canvas{
+  border: 2px solid black;
+}
+
+#trigger-take-test{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Source Sans Pro;
+  padding: 200px;
+  margin: 50px;
+  font-size: 2rem;
+  /*border: 2px solid black;*/
+  background-color: green;
+
+}
