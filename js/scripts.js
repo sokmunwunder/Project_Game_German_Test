@@ -1,20 +1,20 @@
 const canvas = document.getElementById('play');
 const context = canvas.getContext('2d');
 
-
-
-
-
 const game = new Game(canvas);
 game.runLogic();
 game.drawImage();
+
+const triggerPlayElement = document.getElementById('trigger-take-test');
+const triggerPlayAgainElement = document.getElementById('trigger-test-again');
+
+
+
+
+
+
 //game.setTimeout();
 
-
-
-//const canvasElement = document.querySelector('canvas');
-
-//const game = new Game(canvasElement);
 
 //const triggerPlayElement = document.getElementById('trigger-play');
 //const triggerPlayAgainElement = document.getElementById('trigger-play-again');

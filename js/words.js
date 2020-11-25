@@ -16,16 +16,18 @@ class Words {
     //if(this.x < = 0){this.x += this.xSpeed};
     //if(this.x > this.canvas.width){this.x -= this.xSpeed};
     // need to deduct length of word
+    //}
+
+    runHolidayWordsLogic(){
+        this.x -= this.xSpeed;
+        if(this.x <=0){
+            this.x += this.xSpeed};
     }
 
-    runLogicHolidayWords(){
-        this.x -= this.xSpeed;
-        if(this.x <=0){this.x += this.xSpeed};
-    };
-
-    runLogicStudyWords(){
+    runStudyWordsLogic(){
         this.x += this.xSpeed;
-        if(this.x +100 > canvas.width){this.x -=this.xSpeed};
+        if(this.x +100 > canvas.width){
+            this.x -=this.xSpeed};
     };
 
     drawHolidayWords(){
