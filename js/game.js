@@ -9,11 +9,37 @@ class Game {
     reset(){
         this.Player = new Player(this, this.canvas.width/2, this.canvas.height/2, 50,50);
         this.score = 0;
+        this.words = [];
+        this.wordsStartingSpeed = 1;
+        this.intervalBetweenWords = 3000;
+        this.lastWordTimestamp = 0;
+        //this.active = true;
+
+    }
+
+    setKeyBindings(){
+        window.addEventListener('keydown', function(event){
+            switch(event.code){
+                case 'ArrowUp':
+                    this.player.y -=10;
+                    break;
+                case 'ArrowDown':
+                    this.player.y +=10;
+                    break;
+                case 'ArrowRight':
+                    this.player.x +=10;
+                    break;
+                case 'ArrowLeft':
+                    this.player.x -=10;
+                    break;
+            }
+        })
     }
     
 
     runLogic(){
      console.log("test");
+
     };
     drawImage(){
     console.log('draw');
