@@ -31,12 +31,23 @@ class Words {
     };
 
     drawHolidayWords(){
-        context.fillStyle = "green";
-        context.fillText = (Urlaub, this.x, this.y, 100);
+        let holidayWords = ["Urlaub", "Sonne", "Flug", "Hotel"];
+        for (let i=0; i<=holidayWords.length; i++){
+            let holidayWordsIndex = holidayWords[i];
+            context.fillStyle = "green";
+            context.fillText = (holidayWordsIndex, this.x, this.y, 100);
+        }
+    }
+       
 
     drawStudyWords(){
+        let studyWords = ["Lernen", "Schule", "Buch", "Grammatik" ];
+        for (let i=0; i<=studyWords.length; i++){
+        let studyWordsIndex = studyWords[i];
         context.fillStyle = "red";
-        context.strokeText = (Lernen, this.x, this.y, 100);
+        context.strokeText = (studyWordsIndex, this.x, this.y, 100);
+        }
+        
     }
     
 }
