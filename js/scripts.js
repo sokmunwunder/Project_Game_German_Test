@@ -5,12 +5,28 @@ const game = new Game(canvas);
 game.runLogic();
 game.drawImage();
 
+
 const triggerPlayElement = document.getElementById('trigger-take-test');
 const triggerPlayAgainElement = document.getElementById('trigger-test-again');
 
+const screenStartElement=document.getElementById('test-start');
+const screenGameOverElement = document.getElementById('screen-failed-test');
+const screenPlayElement = document.getElementById('test-ongoing');
 
+triggerPlayElement.addEventListener('click', () =>{
+    //screenStartElement.style.display='none';
+    //screenPlayElement.style.display ="initial";
+    //game.loop();
+    console.log('click for test starts activated');
+})
 
-
+triggerPlayAgainElement.addEventListener('click', ()=>{
+    //screenGameOverElement.style.display ='none';
+    //screenPlayElement.style.display = 'initial';
+    //game.reset();
+    console.log('you are retaking the test');
+    //game.loop();
+})
 
 
 //game.setTimeout();

@@ -18,7 +18,7 @@ class Game {
     }
 
     setKeyBindings(){
-        window.addEventListener('keydown', function(event){
+        window.addEventListener('keydown', (event) => {
             switch(event.code){
                 case 'ArrowUp':
                     this.player.y -=10;
@@ -33,18 +33,22 @@ class Game {
                     this.player.x -=10;
                     break;
             }
-        })
-    }
+        }
+    
     
 
     runLogic(){
      console.log("test");
+    }
 
-    };
     drawImage(){
     console.log('draw');
-    //setTimeout(() =>{
+  
+    }
+}
+
+
+
+  //setTimeout(() =>{
         //console.log('every 1 sec');
    // },1000);
-    };
-}
