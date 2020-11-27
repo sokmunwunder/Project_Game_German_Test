@@ -1,5 +1,5 @@
 const playerImage = new Image();
-playerImage.src = 'images/player1.jpg';
+playerImage.src = 'images/newPlayer.jpg';
 
 class Player {
     constructor(game, x, y, width, height){
@@ -8,7 +8,6 @@ class Player {
         this.y = y;
         this.width = width;
         this.height = height;
-        this.position= 0;
     }
 
     draw(){
@@ -18,10 +17,6 @@ class Player {
         //),
         this.game.context.drawImage(
         playerImage,
-        20*this.position,
-        0,
-        50,
-        50,
         this.x,
         this.y,
         this.width,

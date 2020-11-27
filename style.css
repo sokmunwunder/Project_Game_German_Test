@@ -22,5 +22,11 @@ canvas{
   font-size: 3rem;
   /*border: 2px solid black;*/
   background-color: green;
+}
 
+#test-rules{
+
+}
+em{
+  font-weight: bold;
 }

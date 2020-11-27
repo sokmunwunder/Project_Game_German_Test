@@ -1,9 +1,9 @@
 const canvas = document.getElementById('play');
-const context = canvas.getContext('2d');
+//const context = canvas.getContext('2d');
 
 const game = new Game(canvas);
-game.runLogic();
-game.drawImage();
+//game.runLogic();
+//game.drawImage();
 
 
 const triggerPlayElement = document.getElementById('trigger-take-test');

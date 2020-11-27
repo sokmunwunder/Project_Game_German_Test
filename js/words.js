@@ -1,32 +1,33 @@
 class Words {
-    constructor(game, x, y, word, xSpeed){
+    constructor(game, x, y, xSpeed){
      this.game = game;
      this.x = x;
      this.y = y;
      this.xSpeed = xSpeed;
-     this.word = word;
-     this.points = 0;
-     this.position= 0;
+     //this.points = 0;
+     //this.position= 0;
      //this.positionChangeTimestamp = 0;
     }
 
     runWordsLogic(){
         this.x += 1;
-        let holidayWords = ["Urlaub", "Sonne", "Flug", "Hotel"];
-        let studyWords = ["Lernen", "Schule", "Buch", "Grammatik" ];
+        let wordsWithPlusTenPoints = ["Urlaub", "Sonne", "Flug", "Hotel"];
+        let wordsWithMinusTenPoints = ["Lernen", "Schule", "Buch", "Grammatik" ];
         let arrayWords = [" ", "Urlaub", "Sonne", "Flug", "Hotel","Lernen", "Schule", "Buch", "Grammatik" ];
-        let randomArrayWords = [];
-        let randomIndex = Math.round(Math.random()*arrayWords.length);
-        if (randomArrayWords.length === 0){
-            randomArrayWords.unshift(arrayWords[randomIndex]);
-        }
-        else{
-            randomArrayWords.shift();
-            randomArrayWords.unshift(arrayWords[randomIndex]);
+        let randomArrayWord = arrayWords[Math.round(Math.random()*arrayWords.length];
+        //let randomArrayWords = [];
+        //let randomIndex = Math.round(Math.random()*arrayWords.length);
+        //if (randomArrayWords.length === 0){
+           // randomArrayWords.unshift(arrayWords[randomIndex]);
+        //}
+        //else{
+            //randomArrayWords.shift();
+            //randomArrayWords.unshift(arrayWords[randomIndex]);
         }
         //randomArrayWords.push(arrayWords[Math.round(Math.random()*arrayWords.length)]);
         
     }
+
 
     drawWordsLogic(){
      
@@ -36,11 +37,9 @@ class Words {
         // }
         this.runWordsLogic();
         context.fillStyle = "black";
-        context.strokeText = (randomArrayWords[0], this.x, this.y, 100)
-
-
+        //context.strokeText = (randomArrayWords[0], this.x, this.y, 100)
+        context.strokeText = (randomArrayWord, this.x, this.y, 100)
     }
-
     }
 
     //runLogic(){
