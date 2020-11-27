@@ -1,19 +1,31 @@
 class Words {
     constructor(game, x, y, xSpeed){
      this.game = game;
-     this.x = x;
+     this.x = this.canvas.width;
      this.y = y;
      this.xSpeed = xSpeed;
      //this.points = 0;
-     //this.position= 0;
-     //this.positionChangeTimestamp = 0;
     }
 
     runWordsLogic(){
-        this.x += 1;
+        //this.x -= this.xSpeed;
+
+        this.x -= 1;
+        if (this.x = 0){
+            this.x += 1;
+        }
+        if (this.x +100 = this.canvas.width)
+        this.x. -= 1;
+        }
+        runWordsLogic();
+//? Is this correct, or should I have a this.game.runWordsLogic()?
+    }
+
+
+    drawWordsLogic(){
         let wordsWithPlusTenPoints = ["Urlaub", "Sonne", "Flug", "Hotel"];
         let wordsWithMinusTenPoints = ["Lernen", "Schule", "Buch", "Grammatik" ];
-        let arrayWords = [" ", "Urlaub", "Sonne", "Flug", "Hotel","Lernen", "Schule", "Buch", "Grammatik" ];
+        let arrayWords = ["Urlaub", "Sonne", "Flug", "Hotel","Lernen", "Schule", "Buch", "Grammatik" ];
         let randomArrayWord = arrayWords[Math.round(Math.random()*arrayWords.length];
         //let randomArrayWords = [];
         //let randomIndex = Math.round(Math.random()*arrayWords.length);
@@ -23,22 +35,10 @@ class Words {
         //else{
             //randomArrayWords.shift();
             //randomArrayWords.unshift(arrayWords[randomIndex]);
-        }
-        //randomArrayWords.push(arrayWords[Math.round(Math.random()*arrayWords.length)]);
-        
-    }
-
-
-    drawWordsLogic(){
-     
-         //if (Date(now) >this.positionChange+150){
-           //  this.position =(this.position +1)%15;
-           //  this.positionChangeTimestamp= Date.now();
-        // }
-        this.runWordsLogic();
-        context.fillStyle = "black";
+        //this.game.context.runWordsLogic();
+        this.game.context.fillStyle = "black";
         //context.strokeText = (randomArrayWords[0], this.x, this.y, 100)
-        context.strokeText = (randomArrayWord, this.x, this.y, 100)
+        this.game.context.strokeText = (randomArrayWord, this.x, this.y, 100)
     }
     }
 
