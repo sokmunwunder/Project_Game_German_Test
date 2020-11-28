@@ -4,6 +4,7 @@ class Words {
      this.x = x;
      this.y = y;
      this.xSpeed = 1;
+     this.value = " ";
      // ? need to change to xSpeed
      //this.wordMultiplyingSpeed = 1;
 
@@ -13,12 +14,12 @@ class Words {
     runWordsLogic() {
         //this.x -= this.xSpeed;
         let a= 0;
-        if(this.x <=this.canvas.width && this.x> 0){
+        if(this.x <=this.game.canvas.width && this.x> 0){
             this.x -= 1;}
         if(this.x <=0){
             this.x +=1*(a +=1);
         }
-        this.game.runWordsLogic();
+        //this.game.runWordsLogic();
         }
     
        // for(let i=0; i<=this.canvas.width; i++){ 
@@ -45,7 +46,8 @@ class Words {
         let wordsWithPlusTenPoints = ["Urlaub", "Sonne", "Flug", "Hotel"];
         let wordsWithMinusTenPoints = ["Lernen", "Schule", "Buch", "Grammatik" ];
         let arrayWords = ["Urlaub", "Sonne", "Flug", "Hotel","Lernen", "Schule", "Buch", "Grammatik" ];
-        let randomArrayWord = arrayWords[Math.round(Math.random()*arrayWords.length];
+        let randomArrayWord = arrayWords[Math.round(Math.random()*arrayWords.length)];
+        this.value = randomArrayWord;
         //let randomArrayWords = [];
         //let randomIndex = Math.round(Math.random()*arrayWords.length);
         //if (randomArrayWords.length === 0){
