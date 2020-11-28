@@ -11,8 +11,8 @@ class Game {
         this.score = 0;
         this.words = [];
         this.wordStartingSpeed = 1;
-        this.intervalBetweenWords = 3000;
-        this.lastWordTimestamp = 0;
+        //this.intervalBetweenWords = 3000;
+        //this.lastWordTimestamp = 0;
         //this.active = true;
 
     }
@@ -33,31 +33,51 @@ class Game {
                     this.player.x -=10;
                     break;
             }
-        })
+
+        this.player.y = Math.max(this.y, 100) && Math.min(this.y, this.canvas.height-50);
+        });
     }
 
     addWords(){
-     const currentTimeStamp = Date.now();
-     if(
-      currentTimeStamp >
-      this.lastWordTimeStamp + this.intervalBetweenWords
-     )
+      
+        for (let i=0; i <=10; i++)
+        {this.y = (i*50)};
+        const word = new Words(
+            this,
+            this.canvas.width,
+            this.y,
+            this.wordStartingSpeed,
+        )
+
+     //const currentTimeStamp = Date.now();
+     //if(
+      //currentTimeStamp >
+      //this.lastWordTimeStamp + this.intervalBetweenWords
+     //)
+// for(let i=0; i<=this.canvas.width; i++){ 
+    //if (this.x >= this.canvas.width){
+       // this.x -= this.xSpeed;
+        // }
+       // if (this.x = 0){
+       // this.x += this.xSpeed * (this.wordMultiplyingSpeed *=1.01);
+       // }
      {
-         const word = new Words(
-         this,
-         this.canvasWidth,
-         Math.random()*(this.canvas.height-100),
-         this.wordStartingSpeed
-         );
-         this.words.push(word);
-         this.lastWordTimeStamp = currentTimeStamp;
+        // const word = new Words(
+        // this,
+        // this.canvas.width,
+        // Math.random()*(this.canvas.height),
+         // ? need to do upper and lower limits of Math.random
+        // this.wordStartingSpeed
+        // );
+        // this.words.push(word);
+        // this.lastWordTimeStamp = currentTimeStamp;
      }
     }
 
-    addPlayer(){
-
-    }
-
+   loop(){
+       this.runLogic();
+       this.draw();
+   }
     runLogic(){
     console.log("test");
     }

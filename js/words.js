@@ -1,24 +1,44 @@
 class Words {
     constructor(game, x, y, xSpeed){
      this.game = game;
-     this.x = this.canvas.width;
+     this.x = x;
      this.y = y;
-     this.xSpeed = xSpeed;
+     this.xSpeed = 1;
+     // ? need to change to xSpeed
+     //this.wordMultiplyingSpeed = 1;
+
      //this.points = 0;
     }
 
     runWordsLogic(){
         //this.x -= this.xSpeed;
+        let a= 0;
+        if(this.x <=this.canvas.width && this.x> 0){
+            this.x -= 1;}
+        if(this.x <=0){
+            this.x +=1*(a +=1);
+        }
+        this.game.runWordsLogic();
+        }
+       // for(let i=0; i<=this.canvas.width; i++){ 
+            //if (this.x >= this.canvas.width){
+            //this.x -= this.xSpeed;
+           //  }
+            //if (this.x = 0){
+           // this.x += this.xSpeed * (this.wordMultiplyingSpeed *=1.01);
+            }
 
-        this.x -= 1;
-        if (this.x = 0){
-            this.x += 1;
-        }
-        if (this.x +100 = this.canvas.width)
-        this.x. -= 1;
-        }
-        runWordsLogic();
-//? Is this correct, or should I have a this.game.runWordsLogic()?
+       // }
+
+       // this.x -= 1;
+        //if (this.x = 0){
+       //     this.x += 2;
+        //}
+        //if (this.x +100 = this.canvas.width)
+        //this.x. -= 3;
+        //}
+        this.game.runWordsLogic();
+//? Is this correct, or should I have runWordsLogic()?
     }
 
 
