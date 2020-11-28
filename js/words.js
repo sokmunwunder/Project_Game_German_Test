@@ -20,13 +20,14 @@ class Words {
         }
         this.game.runWordsLogic();
         }
+    }
        // for(let i=0; i<=this.canvas.width; i++){ 
             //if (this.x >= this.canvas.width){
             //this.x -= this.xSpeed;
            //  }
             //if (this.x = 0){
            // this.x += this.xSpeed * (this.wordMultiplyingSpeed *=1.01);
-            }
+           // }
 
        // }
 
@@ -37,11 +38,9 @@ class Words {
         //if (this.x +100 = this.canvas.width)
         //this.x. -= 3;
         //}
-        this.game.runWordsLogic();
+       // this.game.runWordsLogic();
 //? Is this correct, or should I have runWordsLogic()?
-    }
-
-
+   
     drawWordsLogic(){
         let wordsWithPlusTenPoints = ["Urlaub", "Sonne", "Flug", "Hotel"];
         let wordsWithMinusTenPoints = ["Lernen", "Schule", "Buch", "Grammatik" ];
@@ -60,7 +59,7 @@ class Words {
         //context.strokeText = (randomArrayWords[0], this.x, this.y, 100)
         this.game.context.strokeText = (randomArrayWord, this.x, this.y, 100)
     }
-    }
+    
 
     //runLogic(){
     //this.x -= this.xSpeed;

@@ -79,6 +79,30 @@ class Game {
        this.runLogic();
        this.draw();
    }
+    
+   checkIntersectionBetweenPlayerAndGoodWords(){
+       for (let word of this.words){
+        let wordsWithPlusTenPoints = ["Urlaub", "Sonne", "Flug", "Hotel"];
+      
+        if(word instanceof wordsWithPlusTenPoints && 
+            this.player.x >=word.x ||
+            word.x+100 > this.player.x ){
+            this.score += 10; }
+        }
+   }
+
+   checkIntersectionBetweenPlayerAndBadWords(){
+       for (let word of this.words){
+        let wordsWithMinusTenPoints = ["Lernen", "Schule", "Buch", "Grammatik" ];
+
+        if(word instanceof wordsWithMinusTenPoints &&
+            this.player.x >=word.x ||
+            word.x+100 > this.player.x){
+                this.score -=10;}
+       }
+   }
+
+
     runLogic(){
     console.log("test");
     this.addWords();
