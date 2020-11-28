@@ -51,7 +51,7 @@ class Game {
         this.words.push(word);
     }
     }
-     
+
    
 
    loop() {
@@ -63,7 +63,8 @@ class Game {
            });
        } else {
            screenPlayElement.style.display = 'none';
-           if (this.score===0){
+           //if (this.score===0){
+           if (this.score <0){
            screenFailedTestElement.style.display = 'initial';}
            if (this.score === 100){
            screenPassTestElement.style.display = 'initial';}
