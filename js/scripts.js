@@ -20,13 +20,16 @@ triggerPlayElement.addEventListener('click', () =>{
     game.loop();
 });
 
-//triggerPlayAgainElement.addEventListener('click', ()=>{
+triggerPlayAgainElement.addEventListener('click', ()=>{
+    screenFailedTestElement.display.style = 'none';
+    screenPlayElement.style.display = 'initial';
+    console.log('retest');
     //screenGameOverElement.style.display ='none';
     //screenPlayElement.style.display = 'initial';
     //game.reset();
    // console.log('you are retaking the test');
     //game.loop();
-//})
+})
 
 
 //game.runLogic();

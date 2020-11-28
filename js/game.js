@@ -52,9 +52,10 @@ class Game {
             this.canvas.width,
             wordY,
             this.wordStartingSpeed,
+            this.yPositionWhenTakenOut
         );
         this.words.push(word);
-        console.log(this.words);
+        //console.log(this.words);
     }
     }
 
@@ -93,7 +94,18 @@ class Game {
         if(wordsWithPlusTenPoints.includes(word.value) && 
             this.player.x >=word.x ||
             word.x+100 > this.player.x ){
-            this.score += 10; }
+            this.score += 10; 
+            const indexOfWords = this.words.indexOf(word);
+            this.yPositionWhenTakenOut = word.wordY;
+            this.words.splice(indexOfWords, 1);
+            this.addWords(
+                this,
+                this.canvas.width,
+                this.yPositionWhenTakenOut,
+                this.wordStartingSpeed);
+           
+           
+        }
         }
    }
 
