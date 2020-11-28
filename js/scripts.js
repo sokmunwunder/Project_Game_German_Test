@@ -1,10 +1,7 @@
-const canvas = document.getElementById('play');
+const canvas = document.querySelector('canvas');
 //const context = canvas.getContext('2d');
 
 const game = new Game(canvas);
-//game.runLogic();
-//game.drawImage();
-
 
 const triggerPlayElement = document.getElementById('trigger-take-test');
 const triggerPlayAgainElement = document.getElementById('trigger-test-again');
@@ -14,21 +11,23 @@ const screenGameOverElement = document.getElementById('screen-failed-test');
 const screenPlayElement = document.getElementById('test-ongoing');
 
 triggerPlayElement.addEventListener('click', () =>{
-    //screenStartElement.style.display='none';
-    //screenPlayElement.style.display ="initial";
-    //game.loop();
+    screenStartElement.style.display='none';
+    screenPlayElement.style.display ="initial";
     console.log('click for test starts activated');
-})
+    game.loop();
+});
 
-triggerPlayAgainElement.addEventListener('click', ()=>{
+//triggerPlayAgainElement.addEventListener('click', ()=>{
     //screenGameOverElement.style.display ='none';
     //screenPlayElement.style.display = 'initial';
     //game.reset();
-    console.log('you are retaking the test');
+   // console.log('you are retaking the test');
     //game.loop();
-})
+//})
 
 
+//game.runLogic();
+//game.drawImage();
 //game.setTimeout();
 
 

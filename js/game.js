@@ -1,23 +1,24 @@
 class Game {
-    constructor(canvas){
+    constructor(canvas) {
         this.canvas = canvas;
         this.context = canvas.getContext('2d');
         this.reset();
         this.setKeyBindings();
     }
 
-    reset(){
+    reset() {
         this.Player = new Player(this, this.canvas.width/2+50/2, this.canvas.height/2+50/2, 50,50);
         this.score = 0;
         this.words = [];
         this.wordStartingSpeed = 1;
+        this.active = true;
         //this.intervalBetweenWords = 3000;
         //this.lastWordTimestamp = 0;
-        //this.active = true;
+       
 
     }
 
-    setKeyBindings(){
+    setKeyBindings() {
         window.addEventListener('keydown', (event) => {
             switch(event.code){
                 case 'ArrowUp':
@@ -38,7 +39,7 @@ class Game {
         });
     }
 
-    addWords(){
+    addWords() {
       
         for (let i=0; i <=10; i++)
         {this.y = (i*50)};
@@ -75,12 +76,21 @@ class Game {
      //}
    
 
-   loop(){
+   loop() {
        this.runLogic();
        this.draw();
+       if (this.active) {
+           window.requestAnimationFrame(() => {
+               this.loop();
+           });
+       }
+
+      // screenPlayElement.style.display ='none';
+       // screenGameOverElement.style.display
+       }
    }
     
-   checkIntersectionBetweenPlayerAndGoodWords(){
+   checkIntersectionBetweenPlayerAndGoodWords() {
        for (let word of this.words){
         let wordsWithPlusTenPoints = ["Urlaub", "Sonne", "Flug", "Hotel"];
       
@@ -91,7 +101,7 @@ class Game {
         }
    }
 
-   checkIntersectionBetweenPlayerAndBadWords(){
+   checkIntersectionBetweenPlayerAndBadWords() {
        for (let word of this.words){
         let wordsWithMinusTenPoints = ["Lernen", "Schule", "Buch", "Grammatik" ];
 
@@ -102,30 +112,31 @@ class Game {
        }
    }
 
+   drawScore() {
+       this.context.fillStyle = 'black';
+       this.context.font = '60px Architects Daughter';
+       this.context.fillText(this.score, 350, 45);
+       }
 
-    runLogic(){
+    runLogic() {
     console.log("test");
     this.addWords();
     for (let word of this.words){
         word.runLogic();
+    this.checkIntersectionBetweenPlayerAndBadWords();
+    this.checkIntersectionBetweenPlayerAndGoodWords();
+    if (this.score <=0){
+        this.active = false;
+    }
     }
 
-    draw(){
+    draw() {
     this.context.clearRect(0,0, this.canvas.width, this.canvas.height);
-    }
     for (let word of this.words){
         word.drawWordsLogic();
     }
     this.player.draw();
-
+    this.drawScore();
     }
-
-    //draw(){
-    //console.log('draw');
-    //}
-
-    }
-    
-    
 
   

@@ -1,5 +1,5 @@
 const playerImage = new Image();
-playerImage.src = 'images/newPlayer.jpg';
+playerImage.src = 'images/newPlayer.png';
 
 class Player {
     constructor(game, x, y, width, height){
@@ -10,7 +10,7 @@ class Player {
         this.height = height;
     }
 
-    draw(){
+    draw() {
        // this.game.context.drawImage(
         //context.fillStyle = "black";
         //context.fillRect(canvas.width/2, canvas.height/2, 50,50);
