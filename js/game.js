@@ -83,6 +83,13 @@ class Game {
            window.requestAnimationFrame(() => {
                this.loop();
            });
+       } else {
+           screenPlayElement.style.display = 'none';
+           if (this.score===0){
+           screenFailedTestElement.style.display = 'initial';}
+           if (this.score === 100){
+           screenPassTestElement.style.display = 'initial';}
+           }
        }
 
       // screenPlayElement.style.display ='none';

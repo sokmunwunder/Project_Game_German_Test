@@ -7,8 +7,9 @@ const triggerPlayElement = document.getElementById('trigger-take-test');
 const triggerPlayAgainElement = document.getElementById('trigger-test-again');
 
 const screenStartElement=document.getElementById('test-start');
-const screenGameOverElement = document.getElementById('screen-failed-test');
+const screenFailedTestElement = document.getElementById('screen-failed-test');
 const screenPlayElement = document.getElementById('test-ongoing');
+const screenPassTestElement = document.getElementById('screen-passed-test');
 
 triggerPlayElement.addEventListener('click', () =>{
     screenStartElement.style.display='none';
