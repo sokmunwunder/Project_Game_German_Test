@@ -48,17 +48,7 @@ class Words {
         let arrayWords = ["Urlaub", "Sonne", "Flug", "Hotel","Lernen", "Schule", "Buch", "Grammatik" ];
         let randomArrayWord = arrayWords[Math.round(Math.random()*arrayWords.length)];
         this.value = randomArrayWord;
-        //let randomArrayWords = [];
-        //let randomIndex = Math.round(Math.random()*arrayWords.length);
-        //if (randomArrayWords.length === 0){
-           // randomArrayWords.unshift(arrayWords[randomIndex]);
-        //}
-        //else{
-            //randomArrayWords.shift();
-            //randomArrayWords.unshift(arrayWords[randomIndex]);
-        //this.game.context.runWordsLogic();
         this.game.context.fillStyle = "black";
-        //context.strokeText = (randomArrayWords[0], this.x, this.y, 100)
         this.game.context.strokeText = (randomArrayWord, this.x, this.y, 100)
     }
 
@@ -103,3 +93,14 @@ class Words {
         
    // }
     
+
+    //let randomArrayWords = [];
+        //let randomIndex = Math.round(Math.random()*arrayWords.length);
+        //if (randomArrayWords.length === 0){
+           // randomArrayWords.unshift(arrayWords[randomIndex]);
+        //}
+        //else{
+            //randomArrayWords.shift();
+            //randomArrayWords.unshift(arrayWords[randomIndex]);
+        //this.game.context.runWordsLogic();
+         //context.strokeText = (randomArrayWords[0], this.x, this.y, 100)

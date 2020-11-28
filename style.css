@@ -6,10 +6,11 @@ body{
   justify-content: center;
   align-items: center;
   font-family: Source Sans Pro;
+  color: slategray;
 }
 
 canvas{
-  border: 10px solid, black;
+  border: 10px solid, slategray;
 }
 
 #trigger-take-test{

@@ -13,8 +13,10 @@ const screenPassTestElement = document.getElementById('screen-passed-test');
 
 triggerPlayElement.addEventListener('click', () =>{
     screenStartElement.style.display='none';
-    screenPlayElement.style.display ="initial";
+    screenPlayElement.style.display = 'initial';
     console.log('click for test starts activated');
+    //game.active = true;
+    //game.reset();
     game.loop();
 });
 

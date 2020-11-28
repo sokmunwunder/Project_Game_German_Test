@@ -7,7 +7,7 @@ class Game {
     }
 
     reset() {
-        this.player = new Player(this, this.canvas.width/2+50/2, this.canvas.height/2+50/2, 50,50);
+        this.player = new Player(this, this.canvas.width/2+50/2, this.canvas.height/2+50/2, 50, 50);
         this.score = 0;
         this.words = [];
         this.wordStartingSpeed = 1;
@@ -21,16 +21,21 @@ class Game {
             switch(event.code){
                 case 'ArrowUp':
                     this.player.y -=10;
+                    console.log('key-up');
                     break;
                 case 'ArrowDown':
                     this.player.y +=10;
+                    console.log('key-down');
                     break;
                 case 'ArrowRight':
                     this.player.x +=10;
+                    console.log('key-right');
                     break;
                 case 'ArrowLeft':
                     this.player.x -=10;
+                    console.log('key-left');
                     break;
+
             }
 
         this.player.y = Math.max(this.player.y, 100) && Math.min(this.player.y, this.canvas.height-50);
@@ -49,18 +54,24 @@ class Game {
             this.wordStartingSpeed,
         );
         this.words.push(word);
+        console.log(this.words);
     }
     }
 
-   
 
    loop() {
+       this.reset();
        this.runLogic();
        this.draw();
        if (this.active) {
-           window.requestAnimationFrame(() => {
+           setInterval(() => {
                this.loop();
-           });
+           }, 1000/30);
+           //window.requestAnimationFrame(() => {
+               //screenPlayElement.style.display = 'none';
+              // console.log('check if loop works');
+               //this.loop();
+           //});
        } else {
            screenPlayElement.style.display = 'none';
            //if (this.score===0){
@@ -104,7 +115,7 @@ class Game {
        }
 
     runLogic() {
-   
+    //this.reset();
     this.addWords();
     console.log("test");
     for (let word of this.words){
