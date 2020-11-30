@@ -19,8 +19,8 @@ canvas {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: monospace;
-  /*font-family: Architects Daughter;*/
+  /*font-family: monospace;*/
+  font-family: Architects Daughter;
   padding: 150px;
   margin: 50px;
   font-size: 3rem;
@@ -45,4 +45,22 @@ em {
 #picture-attribution {
   font-size: 10px;
   padding-top: 400px;
+}
+
+#trigger-test-again {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*font-family: monospace;*/
+  font-family: Architects Daughter;
+  padding: 150px;
+  margin: 20px;
+  font-size: 2rem;
+  /*border: 2px solid black;*/
+  background-color: lightslategrey;
+}
+
+#more-german-classes {
+  display: block;
+  padding-left: 60px;
 }
