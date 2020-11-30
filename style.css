@@ -22,7 +22,7 @@ canvas {
   align-items: center;
   /*font-family: monospace;*/
   font-family: Architects Daughter;
-  padding: 150px;
+  padding: 150px 200px;
   margin: 50px;
   font-size: 3rem;
   /*border: 2px solid black;*/
@@ -67,4 +67,29 @@ em {
   display: block;
   padding-left: 60px;
   padding-bottom: 60px;
+}
+
+#congrats {
+  font-size: 2rem;
+  font-weight: bolder;
+}
+
+#congrats-page {
+  padding-left: 200px;
+}
+
+hr {
+  background-color: slategray;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: none;
+}
+
+#rules {
+  font-size: 1.5em;
+}
+
+#title-test {
+  font-size: 2em;
+  text-decoration: underline;
 }
