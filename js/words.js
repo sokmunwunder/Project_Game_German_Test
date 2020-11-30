@@ -45,7 +45,7 @@ class Words {
     //this.width = this.value.length * 30;
     this.width = this.value.length + 30;
     // this.height = 64;
-    this.height = 16;
+    this.height = 64;
   }
 
   runWordsLogic() {
@@ -70,8 +70,8 @@ class Words {
   }
 
   drawWordsLogic() {
-    this.game.context.font = `${this.height}px monospace`;
-    this.game.context.fillStyle = 'black';
+    //this.game.context.font = `${this.height}px monospace`;
+    this.game.context.fillStyle = 'slategrey';
     //this.game.context.strokeStyle = 'black';
     // this.game.context.strokeText(this.value, this.x, this.y);
     this.game.context.fillText(this.value, this.x, this.y);

@@ -5,19 +5,22 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: Source Sans Pro;
+  font-family: monospace;
+  /*font-family: Source Sans Pro;*/
   color: black;
 }
 
 canvas {
   border: 10px solid, slategray;
+  font-family: monospace;
 }
 
 #trigger-take-test {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: Architects Daughter;
+  font-family: monospace;
+  /*font-family: Architects Daughter;*/
   padding: 150px;
   margin: 50px;
   font-size: 3rem;
