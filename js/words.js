@@ -4,12 +4,25 @@ class Words {
     this.x = x;
     this.y = y;
     this.xSpeed = 1;
-    // ? need to change to xSpeed
-    //this.wordMultiplyingSpeed = 1;
 
-    //this.points = 0;
-    let wordsWithPlusTenPoints = ['Urlaub', 'Sonne', 'Flug', 'Hotel'];
-    let wordsWithMinusTenPoints = ['Lernen', 'Schule', 'Buch', 'Grammatik'];
+    let wordsWithPlusTenPoints = [
+      'Urlaub',
+      'Sonne',
+      'Flug',
+      'Hotel',
+      'Strand',
+      'Meer'
+    ];
+
+    let wordsWithMinusTenPoints = [
+      'Lernen',
+      'Schule',
+      'Buch',
+      'Grammatik',
+      'Wortschatz',
+      'Prüfung'
+    ];
+
     let arrayWords = [
       'Urlaub',
       'Sonne',
@@ -18,28 +31,39 @@ class Words {
       'Lernen',
       'Schule',
       'Buch',
-      'Grammatik'
+      'Grammatik',
+      'Strand',
+      'Meer',
+      'Wortschatz',
+      'Prüfung'
     ];
+
     let randomArrayWord =
       arrayWords[Math.floor(Math.random() * arrayWords.length)];
     this.value = randomArrayWord;
 
-    this.width = this.value.length * 30;
-    this.height = 64;
+    //this.width = this.value.length * 30;
+    this.width = this.value.length + 30;
+    // this.height = 64;
+    this.height = 16;
   }
 
   runWordsLogic() {
+    this.x -= 1;
+    /*if (this.x < 0) {
+      this.x += 1;
+    }*/
+
     //this.x -= this.xSpeed;
-    let a = 0;
-    /*
-    if (this.x <= this.game.canvas.width && this.x > 0) {
-      this.x -= 1;
-    }
-    if (this.x <= 0) {
+    //let a = 0;
+
+    /* if (this.x <= this.game.canvas.width && this.x > 0) {
+      this.x += 1;
+    }*/
+    /* if (this.x <= 0) {
       this.x += 1 * (a + 1);
     }
     */
-    this.x -= 1;
     //this.game.runWordsLogic();
 
     // console.log(this.x);
@@ -48,8 +72,9 @@ class Words {
   drawWordsLogic() {
     this.game.context.font = `${this.height}px monospace`;
     this.game.context.fillStyle = 'black';
-    this.game.context.strokeStyle = 'black';
-    this.game.context.strokeText(this.value, this.x, this.y);
+    //this.game.context.strokeStyle = 'black';
+    // this.game.context.strokeText(this.value, this.x, this.y);
+    this.game.context.fillText(this.value, this.x, this.y);
   }
 }
 
