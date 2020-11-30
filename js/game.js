@@ -82,28 +82,40 @@ class Game {
   }
 
   checkIntersectionBetweenPlayerAndGoodWords() {
-    for (let word of this.words) {
-      let wordsWithPlusTenPoints = [
-        'Urlaub',
-        'Sonne',
-        'Flug',
-        'Hotel',
-        'Strand',
-        'Meer',
-        'Wandern',
-        'Spielen',
-        'Essen',
-        'Schwimmen'
-      ];
+    let wordsWithPlusTenPoints = [
+      'Urlaub',
+      'Sonne',
+      'Flug',
+      'Hotel',
+      'Strand',
+      'Meer',
+      'Wandern',
+      'Spielen',
+      'Essen',
+      'Schwimmen'
+    ];
 
+    for (let word of this.words) {
       if (
         wordsWithPlusTenPoints.includes(word.value) &&
-        this.player.x >= word.x
+        this.player.x + this.player.width >= word.x &&
+        this.player.x <= word.x + word.width &&
+        this.player.y + this.player.height >= word.y &&
+        this.player.y <= word.y + 50
       ) {
         this.score += 10;
+        const indexOfWord = this.words.indexOf(word);
+        this.words.splice(indexOfWord, 1);
       }
     }
   }
+  // Codes from line 99 to 104 work
+  // if (
+  //wordsWithPlusTenPoints.includes(word.value) &&
+  // this.player.x >= word.x
+  //) {
+  //   this.score += 10;
+  // }
 
   checkIntersectionBetweenPlayerAndBadWords() {
     let wordsWithMinusTenPoints = [
@@ -132,22 +144,35 @@ class Game {
         this.words.splice(indexOfWord, 1);
       }
     }
-    // Lines 122 to 129 are good codes that should be reactivated if my codes don't work to run the game
-    // for (let word of this.words) {
-    // if (
-    // wordsWithMinusTenPoints.includes(word.value) &&
-    // this.player.x >= word.x
-    //) {
-    //  this.score -= 1;
-    // }
-    //}
   }
+  // Lines 122 to 129 are good codes that should be reactivated if my codes don't work to run the game
+  // for (let word of this.words) {
+  // if (
+  // wordsWithMinusTenPoints.includes(word.value) &&
+  // this.player.x >= word.x
+  //) {
+  //  this.score -= 1;
+  // }
+  //}
 
+  // Lines 159 to 166 are good codes
+  // collectUnusedWords() {
+  //for (let word of this.words) {
+  // if (word.x <0) {
+  // const indexOfWord = this.words.indexOf(word);
+  // this.words.splice(indexOfWord, 1);
+  //}
+  //}
+  // }
   collectUnusedWords() {
     for (let word of this.words) {
-      if (word.x === 10) {
-        const indexOfWord = this.words.indexOf(word);
-        this.words.splice(indexOfWord, 1);
+      if (word.x === 5) {
+        let uncollectedWords = [];
+        uncollectedWords.push(word);
+        //uncollectedWords.shift();
+        const indexOfWord = uncollectedWords.indexOf(word);
+        uncollectedWords.splice(indexOfWord, 1);
+        console.log(`${uncollectedWords.length}`);
       }
     }
   }
