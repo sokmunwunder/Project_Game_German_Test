@@ -12,7 +12,7 @@ class Game {
       this.canvas.width / 2 + 50 / 2,
       this.canvas.height / 2 + 50 / 2,
       50,
-      50
+      60
     );
     this.score = 150;
     this.words = [];

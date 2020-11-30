@@ -1,4 +1,4 @@
-body{
+body {
   background-color: lightskyblue;
   margin: 100px;
   height: 100vh;
@@ -6,14 +6,14 @@ body{
   justify-content: center;
   align-items: center;
   font-family: Source Sans Pro;
-  color:black;
+  color: black;
 }
 
-canvas{
+canvas {
   border: 10px solid, slategray;
 }
 
-#trigger-take-test{
+#trigger-take-test {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,9 +25,21 @@ canvas{
   background-color: lightslategrey;
 }
 
-#test-rules{
-
+h3 {
+  font-weight: bolder;
+  font-size: 1.5em;
 }
-em{
+
+#test-rules {
+  display: block;
+  padding-left: 60px;
+}
+
+em {
   font-weight: bold;
+}
+
+#picture-attribution {
+  font-size: 10px;
+  padding-top: 400px;
 }
