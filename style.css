@@ -11,8 +11,9 @@ body {
 }
 
 canvas {
-  border: 10px solid, slategray;
-  font-family: monospace;
+  border: 2px solid slategrey;
+  background-color: lightskyblue;
+  /*font-family: monospace;*/
 }
 
 #trigger-take-test {
@@ -45,6 +46,8 @@ em {
 #picture-attribution {
   font-size: 10px;
   padding-top: 400px;
+  color: grey;
+  padding-left: 60px;
 }
 
 #trigger-test-again {
@@ -63,4 +66,5 @@ em {
 #more-german-classes {
   display: block;
   padding-left: 60px;
+  padding-bottom: 60px;
 }

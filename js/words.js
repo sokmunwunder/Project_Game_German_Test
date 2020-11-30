@@ -11,7 +11,11 @@ class Words {
       'Flug',
       'Hotel',
       'Strand',
-      'Meer'
+      'Meer',
+      'Wandern',
+      'Spielen',
+      'Essen',
+      'Schwimmen'
     ];
 
     let wordsWithMinusTenPoints = [
@@ -20,7 +24,11 @@ class Words {
       'Buch',
       'Grammatik',
       'Wortschatz',
-      'Prüfung'
+      'Prüfung',
+      'Lektion',
+      'Lesen',
+      'Schreiben',
+      'Hören'
     ];
 
     let arrayWords = [
@@ -35,7 +43,15 @@ class Words {
       'Strand',
       'Meer',
       'Wortschatz',
-      'Prüfung'
+      'Prüfung',
+      'Lektion',
+      'Lesen',
+      'Schreiben',
+      'Hören',
+      'Wandern',
+      'Spielen',
+      'Essen',
+      'Schwimmen'
     ];
 
     let randomArrayWord =

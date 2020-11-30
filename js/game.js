@@ -129,8 +129,8 @@ class Game {
   }
 
   drawScore() {
-    this.context.fillStyle = 'black';
-    this.context.font = '60px Architects Daughter';
+    this.context.fillStyle = 'navy';
+    this.context.font = '40px monospace';
     this.context.fillText(this.score, 350, 45);
   }
 
