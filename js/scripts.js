@@ -21,15 +21,19 @@ triggerPlayElement.addEventListener('click', () => {
 });
 
 triggerPlayAgainElement.addEventListener('click', () => {
-  screenFailedTestElement.display.style = 'none';
+  screenFailedTestElement.style.display = 'none';
+  screenStartElement.style.display = 'none';
   screenPlayElement.style.display = 'initial';
   console.log('retest');
-  //screenGameOverElement.style.display ='none';
-  //screenPlayElement.style.display = 'initial';
-  //game.reset();
-  // console.log('you are retaking the test');
-  //game.loop();
+  //game.active = true;
+  game.reset();
+  game.loop();
 });
+//screenGameOverElement.style.display ='none';
+//screenPlayElement.style.display = 'initial';
+//game.reset();
+// console.log('you are retaking the test');
+//game.loop();
 
 //game.runLogic();
 //game.drawImage();

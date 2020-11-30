@@ -74,6 +74,7 @@ class Words {
     this.game.context.fillStyle = 'slategrey';
     //this.game.context.strokeStyle = 'black';
     // this.game.context.strokeText(this.value, this.x, this.y);
+    this.game.context.font = '24px, monospace';
     this.game.context.fillText(this.value, this.x, this.y);
   }
 }
