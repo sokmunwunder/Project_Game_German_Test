@@ -7,15 +7,9 @@ class Game {
   }
 
   reset() {
-    this.player = new Player(
-      this,
-      50,
-      this.canvas.height - 60,
-      //this.canvas.width / 2 + 50 / 2,
-      //this.canvas.height / 2 - 25,
-      45,
-      60
-    );
+    this.player = new Player(this, 50, this.canvas.height - 60, 45, 60);
+
+    // !!Need to change how words are added !!
     this.score = 150;
     this.words = [];
     this.wordStartingSpeed = 1;
@@ -30,19 +24,19 @@ class Game {
     window.addEventListener('keydown', (event) => {
       switch (event.code) {
         case 'ArrowUp':
-          this.player.y -= 10;
+          this.player.y -= 20;
           console.log('key-up');
           break;
         case 'ArrowDown':
-          this.player.y += 10;
+          this.player.y += 20;
           console.log('key-down');
           break;
         case 'ArrowRight':
-          this.player.x += 10;
+          this.player.x += 20;
           console.log('key-right');
           break;
         case 'ArrowLeft':
-          this.player.x -= 10;
+          this.player.x -= 20;
           console.log('key-left');
           break;
       }
@@ -51,30 +45,25 @@ class Game {
       this.player.y = Math.max(this.player.y, 0);
       this.player.x = Math.min(this.player.x, this.canvas.width - 45);
       this.player.x = Math.max(this.player.x, 0);
-
-      //Math.max(this.player.y, 100) &&
-      // Math.min(this.player.y, this.canvas.height - 50);
     });
   }
 
   addWord(wordY) {
-    //this.player.y = (i*50)};
     const word = new Words(
       this,
       this.canvas.width,
       wordY,
-      this.wordStartingSpeed,
-      this.yPositionWhenTakenOut
+      this.wordStartingSpeed
+      //this.yPositionWhenTakenOut
     );
     this.words.push(word);
-    //console.log(this.words);
   }
 
   loop() {
-    // this.reset();
     this.runLogic();
     this.draw();
-    if (this.active && this.score >= 0) {
+    if (this.active && this.score >= 0 && this.score < 300) {
+      // if (this.active && this.score >= 0) {
       setTimeout(() => {
         this.loop();
       }, 1000 / 30);
@@ -83,47 +72,82 @@ class Game {
       // console.log('check if loop works');
       //this.loop();
       //});
-    } else if (this.score === 200) {
+    } else if (this.score >= 300) {
       screenPassTestElement.style.display = 'initial';
       screenPlayElement.style.display = 'none';
     } else if (this.score < 0) {
-      //screenPlayElement.style.display = 'none';
-      //if (this.score===0){
       screenFailedTestElement.style.display = 'initial';
       screenPlayElement.style.display = 'none';
     }
   }
 
-  // screenPlayElement.style.display ='none';
-  // screenGameOverElement.style.display
-
   checkIntersectionBetweenPlayerAndGoodWords() {
     for (let word of this.words) {
-      let wordsWithPlusTenPoints = ['Urlaub', 'Sonne', 'Flug', 'Hotel'];
+      let wordsWithPlusTenPoints = [
+        'Urlaub',
+        'Sonne',
+        'Flug',
+        'Hotel',
+        'Strand',
+        'Meer',
+        'Wandern',
+        'Spielen',
+        'Essen',
+        'Schwimmen'
+      ];
 
       if (
-        (wordsWithPlusTenPoints.includes(word.value) &&
-          this.player.x >= word.x) ||
-        word.x + 100 > this.player.x
+        wordsWithPlusTenPoints.includes(word.value) &&
+        this.player.x >= word.x
       ) {
         this.score += 10;
-        const indexOfWords = this.words.indexOf(word);
-        const yPositionWhenTakenOut = word.wordY;
-        this.words.splice(indexOfWords, 1);
-        this.addWord(yPositionWhenTakenOut);
       }
     }
   }
 
   checkIntersectionBetweenPlayerAndBadWords() {
-    let wordsWithMinusTenPoints = ['Lernen', 'Schule', 'Buch', 'Grammatik'];
+    let wordsWithMinusTenPoints = [
+      'Lernen',
+      'Schule',
+      'Buch',
+      'Grammatik',
+      'Wortschatz',
+      'Prüfung',
+      'Lektion',
+      'Lesen',
+      'Schreiben',
+      'Hören'
+    ];
+
     for (let word of this.words) {
       if (
         wordsWithMinusTenPoints.includes(word.value) &&
-        this.player.x >= word.x
-        // || word.x + 100 > this.player.x
+        this.player.x + this.player.width >= word.x &&
+        this.player.x <= word.x + word.width &&
+        this.player.y + this.player.height >= word.y &&
+        this.player.y <= word.y + 50
       ) {
-        this.score -= 1;
+        this.score -= 10;
+        const indexOfWord = this.words.indexOf(word);
+        this.words.splice(indexOfWord, 1);
+      }
+    }
+    // Lines 122 to 129 are good codes that should be reactivated if my codes don't work to run the game
+    // for (let word of this.words) {
+    // if (
+    // wordsWithMinusTenPoints.includes(word.value) &&
+    // this.player.x >= word.x
+    //) {
+    //  this.score -= 1;
+    // }
+    //}
+  }
+
+  collectUnusedWords() {
+    for (let word of this.words) {
+      if (word.x === 10) {
+        const indexOfWord = this.words.indexOf(word);
+        this.words.splice(indexOfWord, 1);
       }
     }
   }
@@ -135,19 +159,20 @@ class Game {
   }
 
   runLogic() {
-    //this.reset();
-    // this.addWords();
-    // console.log('test');
     for (let word of this.words) {
       word.runWordsLogic();
     }
+    this.collectUnusedWords();
     this.checkIntersectionBetweenPlayerAndBadWords();
-    /*
+
     this.checkIntersectionBetweenPlayerAndGoodWords();
-    */
+
     if (this.score < 0) {
       this.active = false;
     }
+    /* if (this.score === 300) {
+        this.active = false;
+    } */
   }
 
   draw() {
