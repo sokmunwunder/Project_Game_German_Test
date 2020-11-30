@@ -10,7 +10,7 @@ class Game {
     this.player = new Player(this, 50, this.canvas.height - 60, 45, 60);
 
     // !!Need to change how words are added !!
-    this.score = 150;
+    this.score = 190;
     this.words = [];
     this.wordStartingSpeed = 1;
     this.active = true;
@@ -62,23 +62,24 @@ class Game {
   loop() {
     this.runLogic();
     this.draw();
-    if (this.active && this.score >= 0 && this.score < 300) {
-      // if (this.active && this.score >= 0) {
+    // if (this.active && this.score >= 0 && this.score < 200) {
+    if (this.active && this.score >= 0) {
       setTimeout(() => {
         this.loop();
       }, 1000 / 30);
-      //window.requestAnimationFrame(() => {
-      //screenPlayElement.style.display = 'none';
-      // console.log('check if loop works');
-      //this.loop();
-      //});
-    } else if (this.score >= 300) {
-      screenPassTestElement.style.display = 'initial';
-      screenPlayElement.style.display = 'none';
-    } else if (this.score < 0) {
-      screenFailedTestElement.style.display = 'initial';
-      screenPlayElement.style.display = 'none';
     }
+    //window.requestAnimationFrame(() => {
+    //screenPlayElement.style.display = 'none';
+    //console.log('check if loop works');
+    //this.loop();
+    //});
+    // else if ((this.score = 200)) {
+    //screenPassTestElement.style.display = 'initial';
+    // screenPlayElement.style.display = 'none';
+    //} else if (this.score < 0) {
+    //  screenFailedTestElement.style.display = 'initial';
+    // screenPlayElement.style.display = 'none';
+    // }
   }
 
   checkIntersectionBetweenPlayerAndGoodWords() {
@@ -192,9 +193,22 @@ class Game {
 
     this.checkIntersectionBetweenPlayerAndGoodWords();
 
-    if (this.score < 0) {
-      this.active = false;
+    if (this.score <= 0) {
+      screenFailedTestElement.style.display = 'initial';
+      screenPlayElement.style.display = 'none';
     }
+
+    if (this.score >= 200) {
+      screenPassTestElement.style.display = 'initial';
+      screenPlayElement.style.display = 'none';
+    }
+    //if (this.score < 0 || this.score > 200) {
+    // this.active = false;
+    //}
+
+    //if (this.score < 0 ) {
+    // this.active = false;
+    //}
     /* if (this.score === 300) {
         this.active = false;
     } */
