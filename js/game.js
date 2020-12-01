@@ -4,6 +4,7 @@ class Game {
     this.context = canvas.getContext('2d');
     this.reset();
     this.setKeyBindings();
+    this.active = true;
   }
 
   // Original reset() codes which worked and should be reactivated if my new codes don't work
@@ -23,7 +24,7 @@ class Game {
   reset() {
     this.player = new Player(this, 50, this.canvas.height - 60, 45, 60);
     this.lastWordTimeStamp = 0;
-    this.intervalBetweenWords = 50000;
+    this.intervalBetweenWords = 5000;
     this.wordStartingSpeed = 1;
     this.words = [];
     this.score = 150;
@@ -76,27 +77,21 @@ class Game {
   // }
 
   addWord() {
-    //for (let i = 0; i <= 8; i++) {
-    //const wordY = i * 80;
-    // this.addWord(wordY);
-    //}
     const currentTimeStamp = Date.now();
     if (currentTimeStamp > this.lastWordTimeStamp + this.intervalBetweenWords) {
-      const randomY = Math.random() * (this.canvas.height - 50);
-      //for (let i = 0; i <= 8; i++) {
-      // const yPosition = i * 80;
-      // this.y = yPosition;
-      //}
+      let randomY = Math.max(
+        Math.floor(Math.random() * (this.canvas.height - 50)),
+        150
+      );
       const word = new Words(
         this,
         this.canvas.width,
-        //wordY,
+        // Math.floor(Math.random() * (this.canvas.height - 50)),
         randomY,
-        //this.y,
         this.wordStartingSpeed
       );
       this.words.push(word);
-      this.lastWordTimestamp = currentTimeStamp;
+      this.lastWordTimeStamp = currentTimeStamp;
     }
   }
 
@@ -111,6 +106,37 @@ class Game {
     }
   }
 
+  /*checkIntersectionBetweenPlayerAndGoodWords() {
+   // let wordsWithPlusTenPoints = [
+     // 'Urlaub',
+     // 'Sonne',
+      'Flug',
+      'Hotel',
+      'Strand',
+      'Meer',
+      'Wandern',
+      'Spielen',
+      'Essen',
+      'Schwimmen'
+    ];
+
+    for (let word of this.words) {
+      if (
+        wordsWithPlusTenPoints.includes(word.value) &&
+        this.player.x + this.player.width >= word.x &&
+        this.player.x <= word.x + word.width &&
+        this.player.y + this.player.height >= word.y &&
+        this.player.y <= word.y + 50
+      ) {
+        this.active = false;
+        console.log(word);
+        this.score += 10;
+        const indexOfWord = this.words.indexOf(word);
+        this.words.splice(indexOfWord, 1);
+      }
+    }
+  }*/
+
   checkIntersectionBetweenPlayerAndGoodWords() {
     let wordsWithPlusTenPoints = [
       'Urlaub',
@@ -124,7 +150,6 @@ class Game {
       'Essen',
       'Schwimmen'
     ];
-
     for (let word of this.words) {
       if (
         wordsWithPlusTenPoints.includes(word.value) &&
@@ -156,12 +181,19 @@ class Game {
 
     for (let word of this.words) {
       if (
-        wordsWithMinusTenPoints.includes(word.value) &&
-        this.player.x + this.player.width >= word.x &&
-        this.player.x <= word.x + word.width &&
-        this.player.y + this.player.height >= word.y &&
-        this.player.y <= word.y + 50
+        this.player.x > word.x &&
+        this.player.x < word.x + word.width &&
+        this.player.y > word.y &&
+        this.player.y < word.y + word.height &&
+        wordsWithMinusTenPoints.includes(word.value)
       ) {
+        // if (
+        // wordsWithMinusTenPoints.includes(word.value) &&
+        // this.player.x + this.player.width >= word.x &&
+        //this.player.x <= word.x + word.width &&
+        //this.player.y + this.player.height >= word.y &&
+        //this.player.y <= word.y + 50
+        //)
         this.score -= 10;
         const indexOfWord = this.words.indexOf(word);
         this.words.splice(indexOfWord, 1);
@@ -198,39 +230,18 @@ class Game {
   }
 
   // These runLogic() codes work and should be reactivated if the new codes do not work
-  //runLogic() {
-  // for (let word of this.words) {
-  //   word.runWordsLogic();
-  // }
-  // this.collectUnusedWords();
-  //this.checkIntersectionBetweenPlayerAndBadWords();
-
-  // this.checkIntersectionBetweenPlayerAndGoodWords();
-
-  // if (this.score <= 0) {
-  // screenFailedTestElement.style.display = 'initial';
-  // screenPlayElement.style.display = 'none';
-  //}
-
-  // if (this.score >= 200) {
-  //  screenPassTestElement.style.display = 'initial';
-  //  screenPlayElement.style.display = 'none';
-  //}
-  //}
-
   runLogic() {
-    this.collectUnusedWords();
     this.addWord();
     for (let word of this.words) {
       word.runWordsLogic();
     }
+    // this.collectUnusedWords();
     this.checkIntersectionBetweenPlayerAndBadWords();
     this.checkIntersectionBetweenPlayerAndGoodWords();
     if (this.score <= 0) {
       screenFailedTestElement.style.display = 'initial';
       screenPlayElement.style.display = 'none';
     }
-
     if (this.score >= 200) {
       screenPassTestElement.style.display = 'initial';
       screenPlayElement.style.display = 'none';
@@ -246,6 +257,25 @@ class Game {
     this.drawScore();
   }
 }
+
+//runLogic() {
+// this.collectUnusedWords();
+// this.addWord();
+//for (let word of this.words) {
+// word.runWordsLogic();
+//}
+//this.checkIntersectionBetweenPlayerAndBadWords();
+// this.checkIntersectionBetweenPlayerAndGoodWords();
+//if (this.score <= 0) {
+// screenFailedTestElement.style.display = 'initial';
+// screenPlayElement.style.display = 'none';
+//}
+
+//if (this.score >= 200) {
+//screenPassTestElement.style.display = 'initial';
+// screenPlayElement.style.display = 'none';
+// }
+// }
 
 //const currentTimeStamp = Date.now();
 //if(

@@ -59,9 +59,9 @@ class Words {
     this.value = randomArrayWord;
 
     //this.width = this.value.length * 30;
-    this.width = this.value.length + 30;
+    //this.width = this.value.length + 30;
     // this.height = 64;
-    this.height = 64;
+    //this.height = 64;
   }
 
   runWordsLogic() {
@@ -73,7 +73,7 @@ class Words {
     this.game.context.fillStyle = 'slategrey';
     //this.game.context.strokeStyle = 'black';
     // this.game.context.strokeText(this.value, this.x, this.y);
-    this.game.context.font = '24px, monospace';
+    this.game.context.font = '24px, 'monospace'';
     this.game.context.fillText(this.value, this.x, this.y);
   }
 }
