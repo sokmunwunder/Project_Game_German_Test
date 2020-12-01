@@ -6,31 +6,32 @@ class Game {
     this.setKeyBindings();
   }
 
+  // Original reset() codes which worked and should be reactivated if my new codes don't work
+  //reset() {
+  // this.player = new Player(this, 50, this.canvas.height - 60, 45, 60);
+  // this.score = 150;
+  // this.words = [];
+  // this.wordStartingSpeed = 1;
+  // this.active = true;
+
+  // for (let i = 0; i <= 8; i++) {
+  //   const wordY = i * 80;
+  //   this.addWord(wordY);
+  // }
+  // }
+
   reset() {
     this.player = new Player(this, 50, this.canvas.height - 60, 45, 60);
-
-    // !!Need to change how words are added !!
-    this.score = 150;
-    //this.lastWordTimeStamp = 0;
-    //this.intervalBetweenWords = 3000;
-    this.words = [];
+    this.lastWordTimeStamp = 0;
+    this.intervalBetweenWords = 3000;
     this.wordStartingSpeed = 1;
+    this.words = [];
+    this.score = 150;
     this.active = true;
 
-    for (let i = 0; i <= 8; i++) {
-      const wordY = i * 80;
-      this.addWord(wordY);
-    }
-
-    // These codes (lines 18-22) of i <=8, i*80 works on the screen.
     //for (let i = 0; i <= 8; i++) {
-    //const wordY = i * 80;
+    // const wordY = i * 80;
     //  this.addWord(wordY);
-    //}
-
-    // for (let i = 0; i <= 10; i++) {
-    //  const wordY = i * 50;
-    // this.addWord(wordY);
     //}
   }
 
@@ -62,7 +63,7 @@ class Game {
     });
   }
 
-  // Lines 66 to 74 are original codes which work
+  // Lines 66 to 74 are original codes which work and should be reactivated if my new codes don't work
   //addWord(wordY) {
   //const word = new Words(
   // this,
@@ -72,6 +73,26 @@ class Game {
   // );
   //  this.words.push(word);
   // }
+
+  addWord() {
+    //for (let i = 0; i <= 8; i++) {
+    //const wordY = i * 80;
+    // this.addWord(wordY);
+    //}
+    const currentTimeStamp = Date.now();
+    if (currentTimeStamp > this.lastWordTimeStamp + this.intervalBetweenWords) {
+      const randomY = Math.random() * (this.canvas.height - 50);
+      const word = new Words(
+        this,
+        this.canvas.width,
+        //wordY,
+        randomY,
+        this.wordStartingSpeed
+      );
+      this.words.push(word);
+      this.lastWordTimestamp = currentTimeStamp;
+    }
+  }
 
   loop() {
     this.runLogic();
@@ -112,13 +133,6 @@ class Game {
       }
     }
   }
-  // Codes from line 99 to 104 work
-  // if (
-  //wordsWithPlusTenPoints.includes(word.value) &&
-  // this.player.x >= word.x
-  //) {
-  //   this.score += 10;
-  // }
 
   checkIntersectionBetweenPlayerAndBadWords() {
     let wordsWithMinusTenPoints = [
@@ -148,17 +162,8 @@ class Game {
       }
     }
   }
-  // Lines 122 to 129 are good codes that should be reactivated if my codes don't work to run the game
-  // for (let word of this.words) {
-  // if (
-  // wordsWithMinusTenPoints.includes(word.value) &&
-  // this.player.x >= word.x
-  //) {
-  //  this.score -= 1;
-  // }
-  //}
 
-  // Lines 159 to 166 are good codes
+  // These lines are good codes currently being replaced by codes below
   // collectUnusedWords() {
   //for (let word of this.words) {
   // if (word.x <0) {
@@ -186,15 +191,35 @@ class Game {
     this.context.fillText(this.score, 350, 45);
   }
 
+  // These runLogic() codes work and should be reactivated if the new codes do not work
+  //runLogic() {
+  // for (let word of this.words) {
+  //   word.runWordsLogic();
+  // }
+  // this.collectUnusedWords();
+  //this.checkIntersectionBetweenPlayerAndBadWords();
+
+  // this.checkIntersectionBetweenPlayerAndGoodWords();
+
+  // if (this.score <= 0) {
+  // screenFailedTestElement.style.display = 'initial';
+  // screenPlayElement.style.display = 'none';
+  //}
+
+  // if (this.score >= 200) {
+  //  screenPassTestElement.style.display = 'initial';
+  //  screenPlayElement.style.display = 'none';
+  //}
+  //}
+
   runLogic() {
+    this.collectUnusedWords();
+    this.addWord();
     for (let word of this.words) {
       word.runWordsLogic();
     }
-    this.collectUnusedWords();
     this.checkIntersectionBetweenPlayerAndBadWords();
-
     this.checkIntersectionBetweenPlayerAndGoodWords();
-
     if (this.score <= 0) {
       screenFailedTestElement.style.display = 'initial';
       screenPlayElement.style.display = 'none';
@@ -204,16 +229,6 @@ class Game {
       screenPassTestElement.style.display = 'initial';
       screenPlayElement.style.display = 'none';
     }
-    //if (this.score < 0 || this.score > 200) {
-    // this.active = false;
-    //}
-
-    //if (this.score < 0 ) {
-    // this.active = false;
-    //}
-    /* if (this.score === 300) {
-        this.active = false;
-    } */
   }
 
   draw() {
@@ -262,3 +277,43 @@ class Game {
 //  screenFailedTestElement.style.display = 'initial';
 // screenPlayElement.style.display = 'none';
 // }
+
+//if (this.score < 0 || this.score > 200) {
+// this.active = false;
+//}
+
+//if (this.score < 0 ) {
+// this.active = false;
+//}
+/* if (this.score === 300) {
+        this.active = false;
+    } */
+
+// Lines 122 to 129 are good codes that should be reactivated if my codes don't work to run the game
+// for (let word of this.words) {
+// if (
+// wordsWithMinusTenPoints.includes(word.value) &&
+// this.player.x >= word.x
+//) {
+//  this.score -= 1;
+// }
+//}
+
+// Codes from line 99 to 104 work
+// if (
+//wordsWithPlusTenPoints.includes(word.value) &&
+// this.player.x >= word.x
+//) {
+//   this.score += 10;
+// }
+
+// These codes (lines 18-22) of i <=8, i*80 works on the screen.
+//for (let i = 0; i <= 8; i++) {
+//const wordY = i * 80;
+//  this.addWord(wordY);
+//}
+
+// for (let i = 0; i <= 10; i++) {
+//  const wordY = i * 50;
+// this.addWord(wordY);
+//}
