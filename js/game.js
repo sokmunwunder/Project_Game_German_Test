@@ -13,7 +13,7 @@ class Game {
     this.intervalBetweenWords = 5000;
     this.wordStartingSpeed = 1;
     this.words = [];
-    this.score = 150;
+    this.score = 100;
     this.active = true;
   }
 
@@ -129,7 +129,12 @@ class Game {
       'Wandern',
       'Spielen',
       'Essen',
-      'Schwimmen'
+      'Schwimmen',
+      'Eis',
+      'Camping',
+      'Wohnwagen',
+      'Berg',
+      'Insel'
     ];
     for (let word of this.words) {
       if (
@@ -157,7 +162,12 @@ class Game {
       'Lektion',
       'Lesen',
       'Schreiben',
-      'Hören'
+      'Hören',
+      'Vortrag',
+      'Hausaufgabe',
+      'Note',
+      'Nomen',
+      'Verben'
     ];
 
     for (let word of this.words) {
@@ -178,7 +188,6 @@ class Game {
   collectUnusedWords() {
     for (let word of this.words) {
       if (word.x <= 5) {
-        //console.log('HERE');
         this.words.splice(this.words.indexOf(word), 1);
       }
     }

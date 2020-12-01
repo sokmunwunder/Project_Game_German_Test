@@ -17,20 +17,30 @@ class Words {
       'Wandern',
       'Spielen',
       'Essen',
-      'Schwimmen'
+      'Schwimmen',
+      'Eis',
+      'Camping',
+      'Wohnwagen',
+      'Berg',
+      'Insel'
     ];
 
     let wordsWithMinusTenPoints = [
       'Lernen',
       'Schule',
-      'Buch',
+      'Bücher',
       'Grammatik',
       'Wortschatz',
       'Prüfung',
       'Lektion',
       'Lesen',
       'Schreiben',
-      'Hören'
+      'Hören',
+      'Vortrag',
+      'Hausaufgabe',
+      'Note',
+      'Nomen',
+      'Verben'
     ];
 
     let arrayWords = [
@@ -53,7 +63,17 @@ class Words {
       'Wandern',
       'Spielen',
       'Essen',
-      'Schwimmen'
+      'Schwimmen',
+      'Eis',
+      'Camping',
+      'Wohnwagen',
+      'Berg',
+      'Insel',
+      'Vortrag',
+      'Hausaufgabe',
+      'Note',
+      'Nomen',
+      'Verben'
     ];
 
     let randomArrayWord =
