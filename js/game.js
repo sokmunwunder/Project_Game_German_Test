@@ -4,22 +4,8 @@ class Game {
     this.context = canvas.getContext('2d');
     this.reset();
     this.setKeyBindings();
-    this.active = true;
+    //this.active = true;
   }
-
-  // Original reset() codes which worked and should be reactivated if my new codes don't work
-  //reset() {
-  // this.player = new Player(this, 50, this.canvas.height - 60, 45, 60);
-  // this.score = 150;
-  // this.words = [];
-  // this.wordStartingSpeed = 1;
-  // this.active = true;
-
-  // for (let i = 0; i <= 8; i++) {
-  //   const wordY = i * 80;
-  //   this.addWord(wordY);
-  // }
-  // }
 
   reset() {
     this.player = new Player(this, 50, this.canvas.height - 60, 45, 60);
@@ -29,16 +15,11 @@ class Game {
     this.words = [];
     this.score = 150;
     this.active = true;
-    //this.yPosition = this.canvas.width;
-
-    //for (let i = 0; i <= 8; i++) {
-    // const wordY = i * 80;
-    //  this.addWord(wordY);
-    //}
   }
 
   setKeyBindings() {
     window.addEventListener('keydown', (event) => {
+      event.preventDefault();
       switch (event.code) {
         case 'ArrowUp':
           this.player.y -= 20;
@@ -156,7 +137,7 @@ class Game {
         this.player.x + this.player.width >= word.x &&
         this.player.x <= word.x + word.width &&
         this.player.y + this.player.height >= word.y &&
-        this.player.y <= word.y + 50
+        this.player.y <= word.y + word.height
       ) {
         this.score += 10;
         const indexOfWord = this.words.indexOf(word);
@@ -181,19 +162,12 @@ class Game {
 
     for (let word of this.words) {
       if (
-        this.player.x > word.x &&
-        this.player.x < word.x + word.width &&
-        this.player.y > word.y &&
-        this.player.y < word.y + word.height &&
-        wordsWithMinusTenPoints.includes(word.value)
+        wordsWithMinusTenPoints.includes(word.value) &&
+        this.player.x + this.player.width >= word.x &&
+        this.player.x <= word.x + word.width &&
+        this.player.y + this.player.height >= word.y &&
+        this.player.y <= word.y + word.height
       ) {
-        // if (
-        // wordsWithMinusTenPoints.includes(word.value) &&
-        // this.player.x + this.player.width >= word.x &&
-        //this.player.x <= word.x + word.width &&
-        //this.player.y + this.player.height >= word.y &&
-        //this.player.y <= word.y + 50
-        //)
         this.score -= 10;
         const indexOfWord = this.words.indexOf(word);
         this.words.splice(indexOfWord, 1);
@@ -201,24 +175,11 @@ class Game {
     }
   }
 
-  // These lines are good codes currently being replaced by codes below
-  // collectUnusedWords() {
-  //for (let word of this.words) {
-  // if (word.x <0) {
-  // const indexOfWord = this.words.indexOf(word);
-  // this.words.splice(indexOfWord, 1);
-  //}
-  //}
-  // }
   collectUnusedWords() {
     for (let word of this.words) {
-      if (word.x === 5) {
-        let uncollectedWords = [];
-        uncollectedWords.push(word);
-        //uncollectedWords.shift();
-        const indexOfWord = uncollectedWords.indexOf(word);
-        uncollectedWords.splice(indexOfWord, 1);
-        console.log(`${uncollectedWords.length}`);
+      if (word.x <= 5) {
+        //console.log('HERE');
+        this.words.splice(this.words.indexOf(word), 1);
       }
     }
   }
@@ -235,7 +196,7 @@ class Game {
     for (let word of this.words) {
       word.runWordsLogic();
     }
-    // this.collectUnusedWords();
+    this.collectUnusedWords();
     this.checkIntersectionBetweenPlayerAndBadWords();
     this.checkIntersectionBetweenPlayerAndGoodWords();
     if (this.score <= 0) {
@@ -353,3 +314,47 @@ class Game {
 //  const wordY = i * 50;
 // this.addWord(wordY);
 //}
+
+//this.yPosition = this.canvas.width;
+
+//for (let i = 0; i <= 8; i++) {
+// const wordY = i * 80;
+//  this.addWord(wordY);
+//}
+
+// Original reset() codes which worked and should be reactivated if my new codes don't work
+//reset() {
+// this.player = new Player(this, 50, this.canvas.height - 60, 45, 60);
+// this.score = 150;
+// this.words = [];
+// this.wordStartingSpeed = 1;
+// this.active = true;
+
+// for (let i = 0; i <= 8; i++) {
+//   const wordY = i * 80;
+//   this.addWord(wordY);
+// }
+// }
+
+// These lines are good codes currently being replaced by codes below
+// collectUnusedWords() {
+//for (let word of this.words) {
+// if (word.x <0) {
+// const indexOfWord = this.words.indexOf(word);
+// this.words.splice(indexOfWord, 1);
+//}
+//}
+// }
+
+/*collectUnusedWords() {
+    for (let word of this.words) {
+      if (word.x === 5) {
+        let uncollectedWords = [];
+        uncollectedWords.push(word);
+        //uncollectedWords.shift();
+        const indexOfWord = uncollectedWords.indexOf(word);
+        uncollectedWords.splice(indexOfWord, 1);
+        console.log(`${uncollectedWords.length}`);
+      }
+    }
+  }*/

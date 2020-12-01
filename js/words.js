@@ -4,6 +4,8 @@ class Words {
     this.x = x;
     this.y = y;
     this.xSpeed = xSpeed;
+    this.width = 100;
+    this.height = 50;
 
     let wordsWithPlusTenPoints = [
       'Urlaub',
@@ -73,7 +75,7 @@ class Words {
     this.game.context.fillStyle = 'slategrey';
     //this.game.context.strokeStyle = 'black';
     // this.game.context.strokeText(this.value, this.x, this.y);
-    this.game.context.font = '24px, 'monospace'';
+    this.game.context.font = '24px, monospace';
     this.game.context.fillText(this.value, this.x, this.y);
   }
 }
