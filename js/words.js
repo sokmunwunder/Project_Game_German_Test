@@ -66,23 +66,6 @@ class Words {
 
   runWordsLogic() {
     this.x -= 1;
-    /*if (this.x < 0) {
-      this.x += 1;
-    }*/
-
-    //this.x -= this.xSpeed;
-    //let a = 0;
-
-    /* if (this.x <= this.game.canvas.width && this.x > 0) {
-      this.x += 1;
-    }*/
-    /* if (this.x <= 0) {
-      this.x += 1 * (a + 1);
-    }
-    */
-    //this.game.runWordsLogic();
-
-    // console.log(this.x);
   }
 
   drawWordsLogic() {
@@ -94,6 +77,24 @@ class Words {
     this.game.context.fillText(this.value, this.x, this.y);
   }
 }
+
+/*if (this.x < 0) {
+      this.x += 1;
+    }*/
+
+//this.x -= this.xSpeed;
+//let a = 0;
+
+/* if (this.x <= this.game.canvas.width && this.x > 0) {
+      this.x += 1;
+    }*/
+/* if (this.x <= 0) {
+      this.x += 1 * (a + 1);
+    }
+    */
+//this.game.runWordsLogic();
+
+// console.log(this.x);
 
 //runLogic(){
 //this.x -= this.xSpeed;

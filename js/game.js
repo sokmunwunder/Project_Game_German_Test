@@ -10,10 +10,17 @@ class Game {
     this.player = new Player(this, 50, this.canvas.height - 60, 45, 60);
 
     // !!Need to change how words are added !!
-    this.score = 190;
+    this.score = 150;
+    //this.lastWordTimeStamp = 0;
+    //this.intervalBetweenWords = 3000;
     this.words = [];
     this.wordStartingSpeed = 1;
     this.active = true;
+
+    for (let i = 0; i <= 8; i++) {
+      const wordY = i * 80;
+      this.addWord(wordY);
+    }
 
     // These codes (lines 18-22) of i <=8, i*80 works on the screen.
     //for (let i = 0; i <= 8; i++) {
@@ -55,16 +62,16 @@ class Game {
     });
   }
 
-  addWord(wordY) {
-    const word = new Words(
-      this,
-      this.canvas.width,
-      wordY,
-      this.wordStartingSpeed
-      //this.yPositionWhenTakenOut
-    );
-    this.words.push(word);
-  }
+  // Lines 66 to 74 are original codes which work
+  //addWord(wordY) {
+  //const word = new Words(
+  // this,
+  // this.canvas.width,
+  // wordY,
+  //this.wordStartingSpeed
+  // );
+  //  this.words.push(word);
+  // }
 
   loop() {
     this.runLogic();
@@ -75,18 +82,6 @@ class Game {
         this.loop();
       }, 1000 / 30);
     }
-    //window.requestAnimationFrame(() => {
-    //screenPlayElement.style.display = 'none';
-    //console.log('check if loop works');
-    //this.loop();
-    //});
-    // else if ((this.score = 200)) {
-    //screenPassTestElement.style.display = 'initial';
-    // screenPlayElement.style.display = 'none';
-    //} else if (this.score < 0) {
-    //  screenFailedTestElement.style.display = 'initial';
-    // screenPlayElement.style.display = 'none';
-    // }
   }
 
   checkIntersectionBetweenPlayerAndGoodWords() {
@@ -254,3 +249,16 @@ class Game {
 // this.words.push(word);
 // this.lastWordTimeStamp = currentTimeStamp;
 //}
+
+//window.requestAnimationFrame(() => {
+//screenPlayElement.style.display = 'none';
+//console.log('check if loop works');
+//this.loop();
+//});
+// else if ((this.score = 200)) {
+//screenPassTestElement.style.display = 'initial';
+// screenPlayElement.style.display = 'none';
+//} else if (this.score < 0) {
+//  screenFailedTestElement.style.display = 'initial';
+// screenPlayElement.style.display = 'none';
+// }
