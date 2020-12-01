@@ -23,11 +23,12 @@ class Game {
   reset() {
     this.player = new Player(this, 50, this.canvas.height - 60, 45, 60);
     this.lastWordTimeStamp = 0;
-    this.intervalBetweenWords = 3000;
+    this.intervalBetweenWords = 50000;
     this.wordStartingSpeed = 1;
     this.words = [];
     this.score = 150;
     this.active = true;
+    //this.yPosition = this.canvas.width;
 
     //for (let i = 0; i <= 8; i++) {
     // const wordY = i * 80;
@@ -82,11 +83,16 @@ class Game {
     const currentTimeStamp = Date.now();
     if (currentTimeStamp > this.lastWordTimeStamp + this.intervalBetweenWords) {
       const randomY = Math.random() * (this.canvas.height - 50);
+      //for (let i = 0; i <= 8; i++) {
+      // const yPosition = i * 80;
+      // this.y = yPosition;
+      //}
       const word = new Words(
         this,
         this.canvas.width,
         //wordY,
         randomY,
+        //this.y,
         this.wordStartingSpeed
       );
       this.words.push(word);

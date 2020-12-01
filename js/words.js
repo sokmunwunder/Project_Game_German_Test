@@ -3,7 +3,7 @@ class Words {
     this.game = game;
     this.x = x;
     this.y = y;
-    this.xSpeed = 1;
+    this.xSpeed = xSpeed;
 
     let wordsWithPlusTenPoints = [
       'Urlaub',
