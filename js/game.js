@@ -14,10 +14,17 @@ class Game {
     this.words = [];
     this.wordStartingSpeed = 1;
     this.active = true;
-    for (let i = 0; i <= 10; i++) {
-      const wordY = i * 50;
-      this.addWord(wordY);
-    }
+
+    // These codes (lines 18-22) of i <=8, i*80 works on the screen.
+    //for (let i = 0; i <= 8; i++) {
+    //const wordY = i * 80;
+    //  this.addWord(wordY);
+    //}
+
+    // for (let i = 0; i <= 10; i++) {
+    //  const wordY = i * 50;
+    // this.addWord(wordY);
+    //}
   }
 
   setKeyBindings() {
