@@ -1,4 +1,5 @@
 const congratsSound = new Audio('sounds/congrats.wav');
+const failureSound = new Audio('sounds/failure.wav');
 
 class Game {
   constructor(canvas) {
@@ -15,7 +16,7 @@ class Game {
     this.intervalBetweenWords = 8500;
     this.wordStartingSpeed = 300;
     this.words = [];
-    this.score = 100;
+    this.score = 10;
     this.active = true;
   }
 
@@ -211,6 +212,8 @@ class Game {
     if (this.score <= 0) {
       screenFailedTestElement.style.display = 'initial';
       screenPlayElement.style.display = 'none';
+      failureSound.play();
+      console.log('sound test');
     }
     if (this.score >= 200) {
       screenPassTestElement.style.display = 'initial';
