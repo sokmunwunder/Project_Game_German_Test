@@ -12,7 +12,7 @@ body {
 
 canvas {
   border: 2px solid slategrey;
-  background-color: lightskyblue;
+  background-color: white;
   /*font-family: monospace;*/
 }
 
@@ -95,10 +95,10 @@ hr {
 }
 
 #test-start {
-  background-image: url('images/19877.jpg');
+  background-image: url('images/47847.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  padding: 200px 330px;
+  padding: 50px 330px;
 }
 
 #screen-passed-test {
@@ -114,3 +114,17 @@ hr {
   background-repeat: no-repeat;
   padding: 330px 420px;
 }
+
+#test-ongoing {
+  background-image: url('images/19877.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 200px 330px;
+}
+
+/*#test-start {
+  background-image: url('images/47847.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 200px 330px;
+}*/
