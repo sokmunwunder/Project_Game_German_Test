@@ -16,7 +16,7 @@ class Game {
     this.intervalBetweenWords = 8500;
     this.wordStartingSpeed = 300;
     this.words = [];
-    this.score = 190;
+    this.score = 10;
     this.active = true;
   }
 
