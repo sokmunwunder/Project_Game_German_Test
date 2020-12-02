@@ -10,8 +10,8 @@ class Game {
   reset() {
     this.player = new Player(this, 50, this.canvas.height - 60, 45, 60);
     this.lastWordTimeStamp = 0;
-    this.intervalBetweenWords = 5000;
-    this.wordStartingSpeed = 1;
+    this.intervalBetweenWords = 8500;
+    this.wordStartingSpeed = 100;
     this.words = [];
     this.score = 100;
     this.active = true;
