@@ -22,9 +22,9 @@ canvas {
   align-items: center;
   /*font-family: monospace;*/
   font-family: Architects Daughter;
-  padding: 150px 200px;
+  padding: 20px 40px;
   margin: 50px;
-  font-size: 3rem;
+  font-size: 2em;
   /*border: 2px solid black;*/
   background-color: lightslategrey;
 }
@@ -98,7 +98,7 @@ hr {
   background-image: url('images/47847.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  padding: 50px 330px;
+  padding: 200px 165px;
 }
 
 #screen-passed-test {
