@@ -48,9 +48,11 @@ class Words {
       'Sonne',
       'Flug',
       'Hotel',
+      'Bonus',
       'Lernen',
       'Schule',
       'Buch',
+      'Bonus',
       'Grammatik',
       'Strand',
       'Meer',
@@ -59,6 +61,7 @@ class Words {
       'Lektion',
       'Lesen',
       'Schreiben',
+      'Bonus',
       'Hören',
       'Wandern',
       'Spielen',
@@ -67,13 +70,16 @@ class Words {
       'Eis',
       'Camping',
       'Wohnwagen',
+      'Bonus',
       'Berg',
       'Insel',
       'Vortrag',
       'Hausaufgabe',
       'Note',
       'Nomen',
-      'Verben'
+      'Verben',
+      'Bonus'
+      //'Demerit'
     ];
 
     let randomArrayWord =

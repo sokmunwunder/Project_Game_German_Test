@@ -1,3 +1,5 @@
+const congratsSound = new Audio('sounds/congrats.wav');
+
 class Game {
   constructor(canvas) {
     this.canvas = canvas;
@@ -11,7 +13,7 @@ class Game {
     this.player = new Player(this, 50, this.canvas.height - 60, 45, 60);
     this.lastWordTimeStamp = 0;
     this.intervalBetweenWords = 8500;
-    this.wordStartingSpeed = 100;
+    this.wordStartingSpeed = 300;
     this.words = [];
     this.score = 100;
     this.active = true;
@@ -46,17 +48,6 @@ class Game {
     });
   }
 
-  // Lines 66 to 74 are original codes which work and should be reactivated if my new codes don't work
-  //addWord(wordY) {
-  //const word = new Words(
-  // this,
-  // this.canvas.width,
-  // wordY,
-  //this.wordStartingSpeed
-  // );
-  //  this.words.push(word);
-  // }
-
   addWord() {
     const currentTimeStamp = Date.now();
     if (currentTimeStamp > this.lastWordTimeStamp + this.intervalBetweenWords) {
@@ -87,36 +78,43 @@ class Game {
     }
   }
 
-  /*checkIntersectionBetweenPlayerAndGoodWords() {
-   // let wordsWithPlusTenPoints = [
-     // 'Urlaub',
-     // 'Sonne',
-      'Flug',
-      'Hotel',
-      'Strand',
-      'Meer',
-      'Wandern',
-      'Spielen',
-      'Essen',
-      'Schwimmen'
-    ];
+  checkIntersectionBetweenPlayerAndBonusPoints() {
+    let bonusPoints = ['Bonus'];
 
     for (let word of this.words) {
       if (
-        wordsWithPlusTenPoints.includes(word.value) &&
+        bonusPoints.includes('Bonus') &&
         this.player.x + this.player.width >= word.x &&
         this.player.x <= word.x + word.width &&
         this.player.y + this.player.height >= word.y &&
-        this.player.y <= word.y + 50
+        this.player.y <= word.y + word.height
       ) {
-        this.active = false;
-        console.log(word);
-        this.score += 10;
+        console.log('positive');
+        this.score += 30;
         const indexOfWord = this.words.indexOf(word);
         this.words.splice(indexOfWord, 1);
       }
     }
-  }*/
+  }
+
+  checkIntersectionBetweenPlayerAndDemeritPoints() {
+    let demeritPoints = ['Demerit'];
+
+    for (let word of this.words) {
+      if (
+        demeritPoints.includes('Demerit') &&
+        this.player.x + this.player.width >= word.x &&
+        this.player.x <= word.x + word.width &&
+        this.player.y + this.player.height >= word.y &&
+        this.player.y <= word.y + word.height
+      ) {
+        console.log('test');
+        this.score -= 50;
+        const indexOfWord = this.words.indexOf(word);
+        this.words.splice(indexOfWord, 1);
+      }
+    }
+  }
 
   checkIntersectionBetweenPlayerAndGoodWords() {
     let wordsWithPlusTenPoints = [
@@ -208,6 +206,8 @@ class Game {
     this.collectUnusedWords();
     this.checkIntersectionBetweenPlayerAndBadWords();
     this.checkIntersectionBetweenPlayerAndGoodWords();
+    this.checkIntersectionBetweenPlayerAndBonusPoints();
+    this.checkIntersectionBetweenPlayerAndDemeritPoints();
     if (this.score <= 0) {
       screenFailedTestElement.style.display = 'initial';
       screenPlayElement.style.display = 'none';
@@ -215,6 +215,7 @@ class Game {
     if (this.score >= 200) {
       screenPassTestElement.style.display = 'initial';
       screenPlayElement.style.display = 'none';
+      congratsSound.play();
     }
   }
 
@@ -367,3 +368,14 @@ class Game {
       }
     }
   }*/
+
+// Lines 66 to 74 are original codes which work and should be reactivated if my new codes don't work
+//addWord(wordY) {
+//const word = new Words(
+// this,
+// this.canvas.width,
+// wordY,
+//this.wordStartingSpeed
+// );
+//  this.words.push(word);
+// }

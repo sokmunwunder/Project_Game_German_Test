@@ -45,9 +45,9 @@ em {
 
 #picture-attribution {
   font-size: 10px;
-  padding-top: 400px;
+  /*padding-top: 400px;*/
   color: grey;
-  padding-left: 60px;
+  /*padding-left: 60px;*/
 }
 
 #trigger-test-again {
