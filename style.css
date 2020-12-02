@@ -93,3 +93,10 @@ hr {
   font-size: 20px;
   text-decoration: underline;
 }
+
+#test-start {
+  background-image: url('images/19877.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 200px 330px;
+}
