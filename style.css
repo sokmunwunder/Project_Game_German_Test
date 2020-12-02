@@ -100,3 +100,10 @@ hr {
   background-repeat: no-repeat;
   padding: 200px 330px;
 }
+
+#screen-passed-test {
+  background-image: url('images/5047.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 450px 380px;
+}
