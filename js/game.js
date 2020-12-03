@@ -18,6 +18,7 @@ class Game {
     this.words = [];
     this.score = 190;
     this.active = true;
+    this.wordLength = 0;
   }
 
   setKeyBindings() {
@@ -58,7 +59,7 @@ class Game {
       );
       const word = new Words(
         this,
-        this.canvas.width,
+        this.canvas.width + this.wordLength,
         // Math.floor(Math.random() * (this.canvas.height - 50)),
         randomY,
         this.wordStartingSpeed
@@ -67,6 +68,26 @@ class Game {
       this.lastWordTimeStamp = currentTimeStamp;
     }
   }
+
+  // Good codes to be reactivated if my attempt at fixing interval speed does not work
+  /* addWord() {
+    const currentTimeStamp = Date.now();
+    if (currentTimeStamp > this.lastWordTimeStamp + this.intervalBetweenWords) {
+      let randomY = Math.max(
+        Math.floor(Math.random() * (this.canvas.height - 50)),
+        150
+      );
+      const word = new Words(
+        this,
+        this.canvas.width,
+        // Math.floor(Math.random() * (this.canvas.height - 50)),
+        randomY,
+        this.wordStartingSpeed
+      );
+      this.words.push(word);
+      this.lastWordTimeStamp = currentTimeStamp;
+    }
+  }*/
 
   loop() {
     this.runLogic();
