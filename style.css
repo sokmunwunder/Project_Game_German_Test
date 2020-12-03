@@ -96,9 +96,9 @@ hr {
 
 #test-start {
   background-image: url('images/47847.jpg');
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
-  padding: 200px 165px;
+  padding: 200px 250px;
 }
 
 #screen-passed-test {
@@ -110,9 +110,10 @@ hr {
 
 #screen-failed-test {
   background-image: url('images/1443.jpg');
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
-  padding: 330px 420px;
+  padding: 200px 420px;
+  border: 200px 0;
 }
 
 #test-ongoing {

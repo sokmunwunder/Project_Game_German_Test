@@ -193,9 +193,11 @@ class Game {
   }
 
   drawScore() {
+    this.context.fillStyle = 'lightgreen';
+    this.context.fillRect(350, 0, 110, 70);
     this.context.fillStyle = 'navy';
     this.context.font = '40px monospace';
-    this.context.fillText(this.score, 350, 45);
+    this.context.fillText(this.score, 380, 45);
   }
 
   // These runLogic() codes work and should be reactivated if the new codes do not work
