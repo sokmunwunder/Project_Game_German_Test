@@ -16,7 +16,7 @@ class Game {
     this.intervalBetweenWords = 8500;
     this.wordStartingSpeed = 300;
     this.words = [];
-    this.score = 190;
+    this.score = 100;
     this.active = true;
     this.wordLength = 0;
   }
@@ -105,7 +105,8 @@ class Game {
 
     for (let word of this.words) {
       if (
-        bonusPoints.includes('Bonus') &&
+        word.value === 'Bonus' &&
+        //bonusPoints.includes('Bonus') &&
         this.player.x + this.player.width >= word.x &&
         this.player.x <= word.x + word.width &&
         this.player.y + this.player.height >= word.y &&
@@ -124,7 +125,8 @@ class Game {
 
     for (let word of this.words) {
       if (
-        demeritPoints.includes('Fehler') &&
+        word.value === 'Fehler' &&
+        //demeritPoints.includes('Fehler') &&
         this.player.x + this.player.width >= word.x &&
         this.player.x <= word.x + word.width &&
         this.player.y + this.player.height >= word.y &&

@@ -44,7 +44,7 @@ class Words {
     ];
 
     let arrayWords = [
-      'Urlaub',
+      /*'Urlaub',
       'Sonne',
       'Flug',
       'Hotel',
@@ -74,7 +74,7 @@ class Words {
       'Hausaufgabe',
       'Note',
       'Nomen',
-      'Verben',
+      'Verben',*/
       'Bonus',
       'Fehler'
     ];
