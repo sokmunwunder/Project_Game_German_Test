@@ -11,12 +11,12 @@ class Game {
   }
 
   reset() {
-    this.player = new Player(this, 50, this.canvas.height - 60, 60, 75);
+    this.player = new Player(this, 60, this.canvas.height - 75, 60, 75);
     this.lastWordTimeStamp = 0;
     this.intervalBetweenWords = 8500;
     this.wordStartingSpeed = 300;
     this.words = [];
-    this.score = 10;
+    this.score = 190;
     this.active = true;
   }
 
@@ -99,11 +99,11 @@ class Game {
   }
 
   checkIntersectionBetweenPlayerAndDemeritPoints() {
-    let demeritPoints = ['Demerit'];
+    let demeritPoints = ['Fehler'];
 
     for (let word of this.words) {
       if (
-        demeritPoints.includes('Demerit') &&
+        demeritPoints.includes('Fehler') &&
         this.player.x + this.player.width >= word.x &&
         this.player.x <= word.x + word.width &&
         this.player.y + this.player.height >= word.y &&
@@ -194,7 +194,7 @@ class Game {
 
   drawScore() {
     this.context.fillStyle = 'lightgreen';
-    this.context.fillRect(350, 0, 110, 70);
+    this.context.fillRect(350, 0, 130, 70);
     this.context.fillStyle = 'navy';
     this.context.font = '40px monospace';
     this.context.fillText(this.score, 380, 45);

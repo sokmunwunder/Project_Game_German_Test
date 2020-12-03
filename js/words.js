@@ -76,7 +76,7 @@ class Words {
       'Nomen',
       'Verben',
       'Bonus'*/
-      'Demerit'
+      'Fehler'
     ];
 
     let randomArrayWord =
