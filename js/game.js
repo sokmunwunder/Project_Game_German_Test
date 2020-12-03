@@ -11,7 +11,7 @@ class Game {
   }
 
   reset() {
-    this.player = new Player(this, 50, this.canvas.height - 60, 45, 60);
+    this.player = new Player(this, 50, this.canvas.height - 60, 60, 75);
     this.lastWordTimeStamp = 0;
     this.intervalBetweenWords = 8500;
     this.wordStartingSpeed = 300;
@@ -42,9 +42,9 @@ class Game {
           break;
       }
 
-      this.player.y = Math.min(this.player.y, this.canvas.height - 60);
+      this.player.y = Math.min(this.player.y, this.canvas.height - 75);
       this.player.y = Math.max(this.player.y, 0);
-      this.player.x = Math.min(this.player.x, this.canvas.width - 45);
+      this.player.x = Math.min(this.player.x, this.canvas.width - 60);
       this.player.x = Math.max(this.player.x, 0);
     });
   }
