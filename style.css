@@ -17,23 +17,51 @@ canvas {
 }
 
 #trigger-take-test {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /*font-family: monospace;*/
+  display: block;
+  text-align: center;
   font-family: Architects Daughter;
-  padding: 20px 40px;
-  margin: 50px;
-  font-size: 2em;
-  /*border: 2px solid black;*/
-  background-color: lightslategrey;
+  font-size: 32px;
+  background-color: firebrick;
+  border-color: firebrick;
+  border-radius: 5px;
+  box-shadow: none;
+  color: black;
+  padding: 10px 30px;
+  margin-left: 288px;
+  margin-top: 80px;
 }
 
 .test-rules-block {
-  display: flex;
-  justify-content: center;
-  background-color: white;
-  padding-top: 100px;
+  display: block;
+  text-align: center;
+  padding: 100px, 50px;
+  background-color: rgba(240, 255, 240, 0.8);
+  margin-top: 240px;
+  padding: 20px;
+  margin-left: 140px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+#title-start-page {
+  font-size: 18px;
+  color: maroon;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.emphasis {
+  font-weight: bolder;
+  text-decoration: wavy;
+  color: maroon;
+}
+
+#attribution-start-page {
+  font-size: 12px;
+  color: black;
+  padding-top: 50px;
+  border-top: 50px;
+  padding-left: 270px;
 }
 
 /*h3 {
@@ -85,9 +113,9 @@ hr {
   border: none;
 }
 
-#rules {
+/*#rules {
   font-size: 16px;
-}
+}*/
 
 #title-test {
   font-size: 20px;
