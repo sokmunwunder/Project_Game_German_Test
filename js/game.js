@@ -13,7 +13,7 @@ class Game {
     this.player = new Player(this, 60, this.canvas.height - 75, 60, 75);
     this.lastWordTimeStamp = 0;
     this.intervalBetweenWords = 6500;
-    this.wordStartingSpeed = 300;
+    this.wordStartingSpeed = 30;
     this.words = [];
     this.score = 100;
     this.active = true;
