@@ -1,5 +1,5 @@
 const congratsSound = new Audio('sounds/congrats.wav');
-const failureSound = new Audio('sounds/failure.wav');
+//const failureSound = new Audio('sounds/failure.wav');
 
 class Game {
   constructor(canvas) {
@@ -13,7 +13,7 @@ class Game {
   reset() {
     this.player = new Player(this, 60, this.canvas.height - 75, 60, 75);
     this.lastWordTimeStamp = 0;
-    this.intervalBetweenWords = 8500;
+    this.intervalBetweenWords = 6500;
     this.wordStartingSpeed = 300;
     this.words = [];
     this.score = 100;
@@ -92,7 +92,6 @@ class Game {
   loop() {
     this.runLogic();
     this.draw();
-    // if (this.active && this.score >= 0 && this.score < 200) {
     if (this.active && this.score >= 0) {
       setTimeout(() => {
         this.loop();
@@ -101,12 +100,9 @@ class Game {
   }
 
   checkIntersectionBetweenPlayerAndBonusPoints() {
-    let bonusPoints = ['Bonus'];
-
     for (let word of this.words) {
       if (
-        word.value === 'Bonus' &&
-        //bonusPoints.includes('Bonus') &&
+        word.value === 'Bonus       ' &&
         this.player.x + this.player.width >= word.x &&
         this.player.x <= word.x + word.width &&
         this.player.y + this.player.height >= word.y &&
@@ -121,12 +117,9 @@ class Game {
   }
 
   checkIntersectionBetweenPlayerAndDemeritPoints() {
-    let demeritPoints = ['Fehler'];
-
     for (let word of this.words) {
       if (
-        word.value === 'Fehler' &&
-        //demeritPoints.includes('Fehler') &&
+        word.value === 'Fehler       ' &&
         this.player.x + this.player.width >= word.x &&
         this.player.x <= word.x + word.width &&
         this.player.y + this.player.height >= word.y &&
@@ -142,21 +135,21 @@ class Game {
 
   checkIntersectionBetweenPlayerAndGoodWords() {
     let wordsWithPlusTenPoints = [
-      'Urlaub',
-      'Sonne',
-      'Flug',
-      'Hotel',
-      'Strand',
-      'Meer',
-      'Wandern',
-      'Spielen',
-      'Essen',
-      'Schwimmen',
-      'Eis',
-      'Camping',
-      'Wohnwagen',
-      'Berg',
-      'Insel'
+      'Urlaub       ',
+      'Sonne       ',
+      'Flug       ',
+      'Hotel       ',
+      'Strand       ',
+      'Meer       ',
+      'Wandern        ',
+      'Spielen       ',
+      'Reise        ',
+      'Museen        ',
+      'Eis       ',
+      'Camping       ',
+      'Grillen       ',
+      'Berg        ',
+      'Insel       '
     ];
     for (let word of this.words) {
       if (
@@ -175,21 +168,21 @@ class Game {
 
   checkIntersectionBetweenPlayerAndBadWords() {
     let wordsWithMinusTenPoints = [
-      'Lernen',
-      'Schule',
-      'Buch',
-      'Grammatik',
-      'Wortschatz',
-      'Prüfung',
-      'Lektion',
-      'Lesen',
-      'Schreiben',
-      'Hören',
-      'Vortrag',
-      'Hausaufgabe',
-      'Note',
-      'Nomen',
-      'Verben'
+      'Lernen      ',
+      'Schule       ',
+      'Buch       ',
+      'Lehrer       ',
+      'Wörter       ',
+      'Prüfung       ',
+      'Lektion       ',
+      'Lesen        ',
+      'Klasse       ',
+      'Hören       ',
+      'Vortrag       ',
+      'Aufgabe       ',
+      'Note       ',
+      'Nomen        ',
+      'Verben       '
     ];
 
     for (let word of this.words) {
@@ -223,7 +216,6 @@ class Game {
     this.context.fillText(this.score, 380, 45);
   }
 
-  // These runLogic() codes work and should be reactivated if the new codes do not work
   runLogic() {
     this.addWord();
     for (let word of this.words) {
@@ -237,8 +229,8 @@ class Game {
     if (this.score <= 0) {
       screenFailedTestElement.style.display = 'initial';
       screenPlayElement.style.display = 'none';
-      failureSound.play();
-      console.log('sound test');
+      //failureSound.play();
+      //console.log('sound test');
     }
     if (this.score >= 200) {
       screenPassTestElement.style.display = 'initial';

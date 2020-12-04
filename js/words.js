@@ -7,7 +7,7 @@ class Words {
     this.width = 100;
     this.height = 50;
 
-    let wordsWithPlusTenPoints = [
+    /*let wordsWithPlusTenPoints = [
       'Urlaub',
       'Sonne',
       'Flug',
@@ -23,9 +23,9 @@ class Words {
       'Wohnwagen',
       'Berg',
       'Insel'
-    ];
+    ];*/
 
-    let wordsWithMinusTenPoints = [
+    /*let wordsWithMinusTenPoints = [
       'Lernen',
       'Schule',
       'Bücher',
@@ -41,42 +41,45 @@ class Words {
       'Note',
       'Nomen',
       'Verben'
-    ];
+    ];*/
 
     let arrayWords = [
-      /*'Urlaub',
-      'Sonne',
-      'Flug',
-      'Hotel',
-      'Bonus',
-      'Lernen',
-      'Schule',
-      'Buch',
-      'Grammatik',
-      'Strand',
-      'Meer',
-      'Wortschatz',
-      'Prüfung',
-      'Lektion',
-      'Lesen',
-      'Schreiben',
-      'Hören',
-      'Wandern',
-      'Spielen',
-      'Essen',
-      'Schwimmen',
-      'Eis',
-      'Camping',
-      'Wohnwagen',
-      'Berg',
-      'Insel',
-      'Vortrag',
-      'Hausaufgabe',
-      'Note',
-      'Nomen',
-      'Verben',*/
-      'Bonus',
-      'Fehler'
+      'Urlaub       ',
+      'Sonne       ',
+      'Flug       ',
+      'Hotel       ',
+      'Lernen      ',
+      'Schule       ',
+      'Buch       ',
+      'Fehler       ',
+      'Lehrer       ',
+      'Strand       ',
+      'Bonus       ',
+      'Meer       ',
+      'Wörter       ',
+      'Prüfung       ',
+      'Lektion       ',
+      'Lesen        ',
+      'Fehler       ',
+      'Klasse       ',
+      'Hören       ',
+      'Wandern        ',
+      'Spielen       ',
+      'Reise        ',
+      'Fehler       ',
+      'Museen        ',
+      'Eis       ',
+      'Camping       ',
+      'Fehler       ',
+      'Grillen       ',
+      'Berg        ',
+      'Insel       ',
+      'Vortrag       ',
+      'Aufgabe       ',
+      'Note       ',
+      'Nomen        ',
+      'Bonus       ',
+      'Verben       '
     ];
 
     let randomArrayWord =
