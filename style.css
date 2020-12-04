@@ -92,6 +92,13 @@ canvas {
   margin-left: 500px;
 }
 
+#screen-passed-test {
+  background-image: url('images/5047.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 350px 380px;
+}
+
 #congrats {
   display: block;
   text-align: left;
@@ -111,13 +118,6 @@ canvas {
   background-repeat: no-repeat;
   padding: 200px 280px;
   margin: 0;
-}
-
-#screen-passed-test {
-  background-image: url('images/5047.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  padding: 350px 380px;
 }
 
 #screen-failed-test {
