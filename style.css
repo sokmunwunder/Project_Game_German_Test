@@ -104,9 +104,11 @@ canvas {
   margin-left: 430px;
   margin-top: 420px;
 }
+
+#attribution-failed-page {
+  font-size: black;
+  margin-left: 500px;
 }
-
-
 
 #congrats {
   font-size: 2rem;
