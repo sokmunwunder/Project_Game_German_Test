@@ -91,29 +91,18 @@ canvas {
 }
 
 #trigger-test-again {
-  /*display: flex;
-  justify-content: center;
-  align-items: center;*/
-  /*font-family: monospace;*/
-  /*font-family: Architects Daughter;
-  padding: 150px;
-  margin: 20px;
-  font-size: 2rem;*/
-  /*border: 2px solid black;*/
-  /*background-color: lightslategrey;*/
-
   display: block;
   text-align: center;
   font-family: Architects Daughter;
   font-size: 32px;
-  background-color: firebrick;
-  border-color: firebrick;
+  background-color: steelblue;
+  border-color: steelblue;
   border-radius: 5px;
   box-shadow: none;
   color: black;
   padding: 10px 30px;
-  margin-left: 150px;
-  margin-top: 400px;
+  margin-left: 430px;
+  margin-top: 420px;
 }
 }
 
