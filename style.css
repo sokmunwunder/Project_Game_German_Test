@@ -43,13 +43,6 @@ em {
   font-weight: bold;
 }
 
-#picture-attribution {
-  font-size: 10px;
-  /*padding-top: 400px;*/
-  color: grey;
-  /*padding-left: 60px;*/
-}
-
 #trigger-test-again {
   display: flex;
   justify-content: center;
@@ -123,6 +116,25 @@ hr {
   background-repeat: no-repeat;
   padding: 200px 330px;
 }
+
+#attribution-play-js {
+  font-size: 12px;
+  color: black;
+  margin-top: 40px;
+}
+
+#attribution-play-mv {
+  font-size: 12px;
+  color: black;
+  padding-left: 550px;
+}
+
+/*#picture-attribution {*/
+/*font-size: 10px;*/
+/*padding-top: 400px;*/
+/*color: grey;*/
+/*padding-left: 60px;*/
+/*}*/
 
 /*#test-start {
   background-image: url('images/47847.jpg');

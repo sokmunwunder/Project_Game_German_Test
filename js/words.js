@@ -7,42 +7,6 @@ class Words {
     this.width = 100;
     this.height = 50;
 
-    /*let wordsWithPlusTenPoints = [
-      'Urlaub',
-      'Sonne',
-      'Flug',
-      'Hotel',
-      'Strand',
-      'Meer',
-      'Wandern',
-      'Spielen',
-      'Essen',
-      'Schwimmen',
-      'Eis',
-      'Camping',
-      'Wohnwagen',
-      'Berg',
-      'Insel'
-    ];*/
-
-    /*let wordsWithMinusTenPoints = [
-      'Lernen',
-      'Schule',
-      'Bücher',
-      'Grammatik',
-      'Wortschatz',
-      'Prüfung',
-      'Lektion',
-      'Lesen',
-      'Schreiben',
-      'Hören',
-      'Vortrag',
-      'Hausaufgabe',
-      'Note',
-      'Nomen',
-      'Verben'
-    ];*/
-
     let arrayWords = [
       'Urlaub       ',
       'Sonne       ',

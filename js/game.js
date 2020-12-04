@@ -1,5 +1,4 @@
 const congratsSound = new Audio('sounds/congrats.wav');
-//const failureSound = new Audio('sounds/failure.wav');
 
 class Game {
   constructor(canvas) {
@@ -211,6 +210,10 @@ class Game {
   drawScore() {
     this.context.fillStyle = 'lightgreen';
     this.context.fillRect(350, 0, 130, 70);
+    this.context.fillStyle = 'pink';
+    this.context.fillRect(0, 250, 50, 200);
+    this.context.fillStyle = 'lightskyblue';
+    this.context.fillRect(750, 200, 50, 150);
     this.context.fillStyle = 'navy';
     this.context.font = '40px monospace';
     this.context.fillText(this.score, 380, 45);
@@ -241,11 +244,12 @@ class Game {
 
   draw() {
     this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    this.drawScore();
     for (let word of this.words) {
       word.drawWordsLogic();
     }
     this.player.draw();
-    this.drawScore();
+    //this.drawScore();
   }
 }
 
