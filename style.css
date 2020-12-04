@@ -29,19 +29,26 @@ canvas {
   background-color: lightslategrey;
 }
 
-h3 {
+.test-rules-block {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  padding-top: 100px;
+}
+
+/*h3 {
   font-weight: bolder;
   font-size: 1.5em;
-}
+}*/
 
-#test-rules {
+/*#test-rules {
   display: block;
   padding-left: 60px;
-}
+}*/
 
-em {
+/*em {
   font-weight: bold;
-}
+}*/
 
 #trigger-test-again {
   display: flex;
