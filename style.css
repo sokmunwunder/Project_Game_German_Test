@@ -124,7 +124,8 @@ canvas {
   font-size: 32px;
   font-weight: bolder;
   margin-bottom: 60px;
-  color: darkblue;
+  padding-top: 50px;
+  color: navy;
 }
 
 #attribution-passed-page a {
