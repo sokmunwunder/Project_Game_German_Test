@@ -20,8 +20,3 @@ class Player {
     );
   }
 }
-
-// this.game.context.drawImage(
-//context.fillStyle = "black";
-//context.fillRect(canvas.width/2, canvas.height/2, 50,50);
-//),

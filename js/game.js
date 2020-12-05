@@ -6,7 +6,6 @@ class Game {
     this.context = canvas.getContext('2d');
     this.reset();
     this.setKeyBindings();
-    //this.active = true;
   }
 
   reset() {
@@ -15,7 +14,7 @@ class Game {
     this.intervalBetweenWords = 6500;
     this.wordStartingSpeed = 30;
     this.words = [];
-    this.score = 190;
+    this.score = 100;
     this.active = true;
     this.wordLength = 0;
   }
@@ -233,13 +232,11 @@ class Game {
     if (this.score <= 0) {
       screenFailedTestElement.style.display = 'initial';
       screenPlayElement.style.display = 'none';
-      //failureSound.play();
-      //console.log('sound test');
     }
     if (this.score >= 200) {
       screenPassTestElement.style.display = 'initial';
       screenPlayElement.style.display = 'none';
-      //congratsSound.play();
+      congratsSound.play();
     }
   }
 
@@ -250,157 +247,5 @@ class Game {
       word.drawWordsLogic();
     }
     this.player.draw();
-    //this.drawScore();
   }
 }
-
-//runLogic() {
-// this.collectUnusedWords();
-// this.addWord();
-//for (let word of this.words) {
-// word.runWordsLogic();
-//}
-//this.checkIntersectionBetweenPlayerAndBadWords();
-// this.checkIntersectionBetweenPlayerAndGoodWords();
-//if (this.score <= 0) {
-// screenFailedTestElement.style.display = 'initial';
-// screenPlayElement.style.display = 'none';
-//}
-
-//if (this.score >= 200) {
-//screenPassTestElement.style.display = 'initial';
-// screenPlayElement.style.display = 'none';
-// }
-// }
-
-//const currentTimeStamp = Date.now();
-//if(
-//currentTimeStamp >
-//this.lastWordTimeStamp + this.intervalBetweenWords
-//)
-// for(let i=0; i<=this.canvas.width; i++){
-//if (this.x >= this.canvas.width){
-// this.x -= this.xSpeed;
-// }
-// if (this.x = 0){
-// this.x += this.xSpeed * (this.wordMultiplyingSpeed *=1.01);
-// }
-//{
-// const word = new Words(
-// this,
-// this.canvas.width,
-// Math.random()*(this.canvas.height),
-// ? need to do upper and lower limits of Math.random
-// this.wordStartingSpeed
-// );
-// this.words.push(word);
-// this.lastWordTimeStamp = currentTimeStamp;
-//}
-
-//window.requestAnimationFrame(() => {
-//screenPlayElement.style.display = 'none';
-//console.log('check if loop works');
-//this.loop();
-//});
-// else if ((this.score = 200)) {
-//screenPassTestElement.style.display = 'initial';
-// screenPlayElement.style.display = 'none';
-//} else if (this.score < 0) {
-//  screenFailedTestElement.style.display = 'initial';
-// screenPlayElement.style.display = 'none';
-// }
-
-//if (this.score < 0 || this.score > 200) {
-// this.active = false;
-//}
-
-//if (this.score < 0 ) {
-// this.active = false;
-//}
-/* if (this.score === 300) {
-        this.active = false;
-    } */
-
-// Lines 122 to 129 are good codes that should be reactivated if my codes don't work to run the game
-// for (let word of this.words) {
-// if (
-// wordsWithMinusTenPoints.includes(word.value) &&
-// this.player.x >= word.x
-//) {
-//  this.score -= 1;
-// }
-//}
-
-// Codes from line 99 to 104 work
-// if (
-//wordsWithPlusTenPoints.includes(word.value) &&
-// this.player.x >= word.x
-//) {
-//   this.score += 10;
-// }
-
-// These codes (lines 18-22) of i <=8, i*80 works on the screen.
-//for (let i = 0; i <= 8; i++) {
-//const wordY = i * 80;
-//  this.addWord(wordY);
-//}
-
-// for (let i = 0; i <= 10; i++) {
-//  const wordY = i * 50;
-// this.addWord(wordY);
-//}
-
-//this.yPosition = this.canvas.width;
-
-//for (let i = 0; i <= 8; i++) {
-// const wordY = i * 80;
-//  this.addWord(wordY);
-//}
-
-// Original reset() codes which worked and should be reactivated if my new codes don't work
-//reset() {
-// this.player = new Player(this, 50, this.canvas.height - 60, 45, 60);
-// this.score = 150;
-// this.words = [];
-// this.wordStartingSpeed = 1;
-// this.active = true;
-
-// for (let i = 0; i <= 8; i++) {
-//   const wordY = i * 80;
-//   this.addWord(wordY);
-// }
-// }
-
-// These lines are good codes currently being replaced by codes below
-// collectUnusedWords() {
-//for (let word of this.words) {
-// if (word.x <0) {
-// const indexOfWord = this.words.indexOf(word);
-// this.words.splice(indexOfWord, 1);
-//}
-//}
-// }
-
-/*collectUnusedWords() {
-    for (let word of this.words) {
-      if (word.x === 5) {
-        let uncollectedWords = [];
-        uncollectedWords.push(word);
-        //uncollectedWords.shift();
-        const indexOfWord = uncollectedWords.indexOf(word);
-        uncollectedWords.splice(indexOfWord, 1);
-        console.log(`${uncollectedWords.length}`);
-      }
-    }
-  }*/
-
-// Lines 66 to 74 are original codes which work and should be reactivated if my new codes don't work
-//addWord(wordY) {
-//const word = new Words(
-// this,
-// this.canvas.width,
-// wordY,
-//this.wordStartingSpeed
-// );
-//  this.words.push(word);
-// }
