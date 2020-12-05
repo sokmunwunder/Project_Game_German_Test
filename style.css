@@ -133,12 +133,12 @@ canvas {
   /*text-decoration: none;*/
 }
 
-#test-ongoing {
+/*#test-ongoing {
   background-image: url('images/19877.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   padding: 200px 330px;
-}
+}*/
 
 #attribution-play-js {
   font-size: 12px;
@@ -161,7 +161,8 @@ canvas {
 }
 
 #test-rules-position {
-  padding-top: 50px;
+  padding-top: 32px;
+  margin-top: 50px;
 }
 
 #test-rules-highlight {
@@ -178,3 +179,30 @@ ul li {
   text-decoration-style: none;
   list-style: none;
 }
+
+#test-ongoing {
+  background-image: url('images/19877.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 200px 330px;
+}
+
+/*#attribution-play-js {
+  font-size: 12px;
+  color: black;
+  margin-top: 17px;
+  padding-left: 5px;
+}
+
+#attribution-play-mv {
+  font-size: 12px;
+  color: black;
+  padding-left: 0px;
+}
+
+.attribution-play-overall {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}*/
