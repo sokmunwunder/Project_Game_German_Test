@@ -16,19 +16,12 @@ canvas {
   /*font-family: monospace;*/
 }
 
-#trigger-take-test {
-  display: block;
-  text-align: center;
-  font-family: Architects Daughter;
-  font-size: 32px;
-  background-color: firebrick;
-  border-color: firebrick;
-  border-radius: 5px;
-  box-shadow: none;
-  color: black;
-  padding: 10px 30px;
-  margin-left: 270px;
-  margin-top: 50px;
+#test-start {
+  background-image: url('images/47847.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 200px 280px;
+  margin: 0;
 }
 
 .test-rules-block {
@@ -54,6 +47,21 @@ canvas {
   font-weight: bolder;
   text-decoration: wavy;
   color: maroon;
+}
+
+#trigger-take-test {
+  display: block;
+  text-align: center;
+  font-family: Architects Daughter;
+  font-size: 32px;
+  background-color: firebrick;
+  border-color: firebrick;
+  border-radius: 5px;
+  box-shadow: none;
+  color: black;
+  padding: 10px 30px;
+  margin-left: 270px;
+  margin-top: 50px;
 }
 
 #attribution-start-page {
@@ -110,14 +118,6 @@ canvas {
 
 .attribution-passed-page {
   font: black;
-}
-
-#test-start {
-  background-image: url('images/47847.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  padding: 200px 280px;
-  margin: 0;
 }
 
 #screen-failed-test {
