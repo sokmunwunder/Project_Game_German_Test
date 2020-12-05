@@ -72,6 +72,14 @@ canvas {
   padding-left: 270px;
 }
 
+#screen-failed-test {
+  background-image: url('images/1443.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 200px 350px;
+  border: 200px 0;
+}
+
 .repeat {
   font-size: 24px;
   background-color: rgba(123, 202, 123, 0.8);
@@ -93,11 +101,12 @@ canvas {
   padding: 10px 30px;
   margin-left: 430px;
   margin-top: 420px;
+  margin-bottom: 50px;
 }
 
 #attribution-failed-page {
-  font-size: black;
-  margin-left: 500px;
+  color: black;
+  margin-left: 520px;
 }
 
 #screen-passed-test {
@@ -121,13 +130,13 @@ canvas {
   /*text-decoration: none;*/
 }
 
-#screen-failed-test {
+/*#screen-failed-test {
   background-image: url('images/1443.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   padding: 200px 350px;
   border: 200px 0;
-}
+}*/
 
 #test-ongoing {
   background-image: url('images/19877.jpg');
