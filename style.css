@@ -60,14 +60,14 @@ canvas {
   box-shadow: none;
   color: black;
   padding: 10px 30px;
-  margin-left: 270px;
+  margin-left: 300px;
   margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 #attribution-start-page {
   font-size: 12px;
   color: black;
-
   border-top: 50px;
   padding-left: 270px;
 }
@@ -116,8 +116,9 @@ canvas {
   color: darkblue;
 }
 
-.attribution-passed-page {
+#attribution-passed-page a {
   font: black;
+  /*text-decoration: none;*/
 }
 
 #screen-failed-test {
