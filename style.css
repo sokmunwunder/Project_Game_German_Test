@@ -20,7 +20,7 @@ canvas {
   background-image: url('images/47847.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  padding: 200px 280px;
+  padding: 80px 270px;
   margin: 0;
 }
 
@@ -31,7 +31,7 @@ canvas {
   background-color: rgba(240, 255, 240, 0.8);
   margin-top: 240px;
   padding: 20px;
-  margin-left: 140px;
+  margin-left: 20px;
   margin-bottom: 20px;
   font-size: 16px;
 }
@@ -60,7 +60,7 @@ canvas {
   box-shadow: none;
   color: black;
   padding: 10px 30px;
-  margin-left: 300px;
+  margin-left: 170px;
   margin-top: 50px;
   margin-bottom: 50px;
 }
@@ -69,7 +69,7 @@ canvas {
   font-size: 12px;
   color: black;
   border-top: 50px;
-  padding-left: 270px;
+  padding-left: 150px;
 }
 
 #screen-failed-test {
@@ -133,13 +133,6 @@ canvas {
   /*text-decoration: none;*/
 }
 
-/*#test-ongoing {
-  background-image: url('images/19877.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  padding: 200px 330px;
-}*/
-
 #attribution-play-js {
   font-size: 12px;
   color: black;
@@ -186,23 +179,3 @@ ul li {
   background-repeat: no-repeat;
   padding: 200px 330px;
 }
-
-/*#attribution-play-js {
-  font-size: 12px;
-  color: black;
-  margin-top: 17px;
-  padding-left: 5px;
-}
-
-#attribution-play-mv {
-  font-size: 12px;
-  color: black;
-  padding-left: 0px;
-}
-
-.attribution-play-overall {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}*/
