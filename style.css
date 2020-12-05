@@ -76,7 +76,7 @@ canvas {
   background-image: url('images/1443.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  padding: 200px 350px;
+  padding: 200px 320px;
   border: 200px 0;
 }
 
@@ -86,6 +86,7 @@ canvas {
   padding: 35px;
   margin-right: 200px;
   margin-top: 34px;
+  font-weight: bold;
 }
 
 #trigger-test-again {
@@ -101,19 +102,20 @@ canvas {
   padding: 10px 30px;
   margin-left: 430px;
   margin-top: 420px;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 
-#attribution-failed-page {
+#attribution-failed-page a {
   color: black;
-  margin-left: 520px;
+  margin-left: 20px;
+  padding-left: 20px;
 }
 
 #screen-passed-test {
   background-image: url('images/5047.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  padding: 350px 380px;
+  padding: 250px 380px;
 }
 
 #congrats {
@@ -129,14 +131,6 @@ canvas {
   font: black;
   /*text-decoration: none;*/
 }
-
-/*#screen-failed-test {
-  background-image: url('images/1443.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  padding: 200px 350px;
-  border: 200px 0;
-}*/
 
 #test-ongoing {
   background-image: url('images/19877.jpg');
