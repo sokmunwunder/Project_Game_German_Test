@@ -14,7 +14,7 @@ class Game {
     this.intervalBetweenWords = 6500;
     this.wordStartingSpeed = 30;
     this.words = [];
-    this.score = 190;
+    this.score = 10;
     this.active = true;
     this.wordLength = 0;
   }
@@ -236,7 +236,13 @@ class Game {
     if (this.score >= 200) {
       screenPassTestElement.style.display = 'initial';
       screenPlayElement.style.display = 'none';
-      setTimeout(() => congratsSound.play(), 3000);
+      setTimeout(() => {
+        congratsSound.play();
+        //setTimeout(() => {
+        //congratsSound.pause();
+        // }, 6000);
+        //
+      }, 3000);
       //congratsSound.play();
       //congratsSound.pause();
     }

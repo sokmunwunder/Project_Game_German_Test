@@ -1,5 +1,5 @@
 body {
-  background-color: white;
+  background-color: peru;
   margin: 0px;
   height: 100vh;
   display: flex;
@@ -9,6 +9,12 @@ body {
   /*font-family: Source Sans Pro;*/
   color: black;
 }
+
+/*section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}*/
 
 canvas {
   border: 2px solid slategrey;
